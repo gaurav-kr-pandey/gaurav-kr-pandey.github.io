@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gaurav Pandey — Senior Backend Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #2563eb; }
+    html { font-family: 'Inter', system-ui; }
+    .timeline-dot { width: 12px; height: 12px; border-radius: 9999px; background: var(--accent); box-shadow: 0 0 0 6px rgba(37,99,235,0.08); }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,23,0.08); }
+    * { transition: background-color .18s ease, color .18s ease; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+
+<!-- Theme Toggle -->
+<div class="fixed top-5 right-5 z-50">
+  <button id="theme-toggle" aria-label="Toggle dark mode"
+    class="p-2 rounded-full bg-white/90 dark:bg-gray-800/80 shadow-md hover:scale-105 transform transition">
+    <span id="theme-icon">🌙</span>
+  </button>
+</div>
+
+<!-- Hero -->
+<header class="max-w-5xl mx-auto px-6 pt-12">
+  <nav class="flex items-center justify-between">
+    <div><a href="#" class="text-xl font-extrabold">Gaurav Pandey</a></div>
+    <div class="flex items-center gap-4 text-sm">
+      <a href="mailto:gaurav17p@gmail.com" class="hover:underline">gaurav17p@gmail.com</a>
+      <a href="tel:+918081887885" class="hover:underline">+91-8081887885</a>
+      <a href="https://github.com/gaurav-kr-pandey" target="_blank" class="px-3 py-2 rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-sm hover:opacity-95">GitHub</a>
+    </div>
+  </nav>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 pb-24">
+  <section class="min-h-[60vh] flex flex-col md:flex-row items-center gap-8 mt-8" data-aos="fade-up">
+    <div class="flex-1">
+      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Senior Backend Engineer — Java, Distributed Systems</h1>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl">
+        7.5 years of professional experience designing and scaling resilient microservices, building data migration strategies and high-throughput backend systems.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#projects" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white/90 dark:bg-gray-800/80 shadow hover:scale-105">View Projects</a>
+        <a href="#experience" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-transparent border border-gray-200 dark:border-gray-700 hover:bg-gray-100/60">Experience</a>
+        <a href="https://github.com/gaurav-kr-pandey" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 text-white">Open GitHub</a>
+      </div>
+    </div>
+    <div class="w-full md:w-80">
+      <div class="rounded-2xl p-6 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-800/80 shadow-lg">
+        <h4 class="text-sm text-gray-500 dark:text-gray-400">Contact</h4>
+        <p class="mt-2 font-medium">Gaurav Pandey</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Senior Backend Engineer</p>
+        <div class="mt-4 text-sm space-y-1">
+          <div><strong>Email:</strong> <a href="mailto:gaurav17p@gmail.com" class="text-blue-600 dark:text-blue-400">gaurav17p@gmail.com</a></div>
+          <div><strong>Phone:</strong> <a href="tel:+918081887885" class="hover:underline">+91-8081887885</a></div>
+          <div><strong>GitHub:</strong> <a href="https://github.com/gaurav-kr-pandey" class="text-blue-600 dark:text-blue-400" target="_blank">github.com/gaurav-kr-pandey</a></div>
+          <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/-gauravpandey" class="text-blue-600 dark:text-blue-400" target="_blank">linkedin.com/in/-gauravpandey</a></div>
+        </div>
+        <a href="assets/Gaurav-Pandey-Resume.pdf" download class="mt-6 inline-block w-full text-center px-4 py-2 rounded-md bg-blue-600 text-white">Download Resume (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE Timeline -->
+  <section id="experience" class="mt-16" data-aos="fade-up">
+    <h2 class="text-2xl font-bold">Experience</h2>
+    <div class="mt-8 relative">
+      <div class="hidden md:block absolute left-6 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700"></div>
+      <div class="space-y-10">
+        <!-- Example role -->
+        <article class="group relative md:ml-16">
+          <div class="absolute md:left-0 md:-translate-x-1/2 md:top-2 md:transform">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="p-5 bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-lg card-hover">
+            <header>
+              <h3 class="text-lg font-semibold">Senior Software Engineer — Walmart</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Dec 2023 — Present</p>
+            </header>
+            <ul class="list-disc ml-5 mt-2 text-sm">
+              <li>Migrated 7.5M users to a new DB with SSO.</li>
+              <li>Designed data migration for multiple markets.</li>
+              <li>Improved sprint planning and productivity.</li>
+            </ul>
+          </div>
+        </article>
+        <!-- Add rest of roles similarly -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="mt-20" data-aos="fade-up">
+    <h2 class="text-2xl font-bold">Projects</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-6">
+      <div class="rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-sm card-hover">
+        <h3 class="text-lg font-semibold">Scalable Chat Application</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Real-time chat app using WebSocket, Spring Boot.</p>
+        <a href="https://github.com/gaurav-kr-pandey/chat-app" target="_blank" class="text-blue-600 dark:text-blue-400 text-sm hover:underline mt-4 block">View on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="mt-20" data-aos="fade-up">
+    <h2 class="text-2xl font-bold">Skills</h2>
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      <div class="p-3 rounded-lg bg-white dark:bg-gray-800 text-center shadow-sm">Java 8</div>
+      <div class="p-3 rounded-lg bg-white dark:bg-gray-800 text-center shadow-sm">Spring Boot</div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="mt-20" data-aos="fade-up">
+    <h2 class="text-2xl font-bold">Education</h2>
+    <div class="mt-4 space-y-3 text-sm">
+      <div><strong>IIT Jodhpur</strong> — M.Tech (AI) — 2025 — Present</div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="contact" class="mt-20" data-aos="fade-up">
+    <h2 class="text-2xl font-bold">Contact Me</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="mt-6 space-y-4 max-w-lg">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border">
+      <textarea name="message" placeholder="Your Message" required rows="4" class="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border"></textarea>
+      <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg">Send Message</button>
+    </form>
+  </section>
+
+</main>
+
+<footer class="border-t border-gray-200 dark:border-gray-700 py-8">
+  <div class="max-w-5xl mx-auto px-6 text-sm text-center text-gray-500 dark:text-gray-400">
+    © 2025 Gaurav Pandey — Backend Engineer
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 700, once: true });
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const root = document.documentElement;
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  root.classList.add('dark'); themeIcon.textContent = '☀️';
+} else { themeIcon.textContent = '🌙'; }
+themeToggleBtn.addEventListener('click', () => {
+  root.classList.toggle('dark');
+  const isDark = root.classList.contains('dark');
+  themeIcon.textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+</script>
+
+</body>
+</html>
