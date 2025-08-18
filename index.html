@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaurav Pandey - Senior Software Engineer</title>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
         
@@ -773,6 +774,59 @@
         .youtube-link::after {
             content: '📺';
             font-size: 16px;
+        }
+
+        /* LinkedIn Badge Section */
+        .linkedin-badge-section {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--neu-light);
+            margin-bottom: 2rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s var(--smooth) 1.3s forwards;
+        }
+
+        .linkedin-badge-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .linkedin-badge-title::before {
+            content: '💼';
+            font-size: 1.5rem;
+        }
+
+        .linkedin-badge-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        /* Hide the inactive badge */
+        .linkedin-badge-light {
+            display: block;
+        }
+
+        .linkedin-badge-dark {
+            display: none;
+        }
+
+        [data-theme="dark"] .linkedin-badge-light {
+            display: none;
+        }
+
+        [data-theme="dark"] .linkedin-badge-dark {
+            display: block;
         }
 
         /* Stats Grid */
@@ -1883,8 +1937,8 @@
                 <h2 class="hero-subtitle">Gaurav Pandey</h2>
                 <p class="hero-description">
                     Passionate software engineer with 7.5+ years of experience building scalable systems, 
-                    leading technical initiatives, and delivering innovative solutions. Currently pursuing 
-                    Master's in AI at IIT Jodhpur while driving critical projects at Walmart.
+                    leading technical initiatives, and delivering innovative solutions. Currently driving 
+                    critical projects at Walmart while sharing knowledge through content creation.
                 </p>
 
                 <!-- Content Creator Section -->
@@ -1897,6 +1951,23 @@
                         <a href="https://www.youtube.com/@scaletobillions" target="_blank" rel="noopener" class="content-link youtube-link">
                             YouTube Channel
                         </a>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Badge Section -->
+                <div class="linkedin-badge-section">
+                    <div class="linkedin-badge-title">Connect on LinkedIn</div>
+                    <div class="linkedin-badge-container">
+                        <div class="linkedin-badge-light" id="linkedinBadgeLight">
+                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="-gauravpandey" data-version="v1">
+                                <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-gauravpandey?trk=profile-badge">Gaurav Pandey</a>
+                            </div>
+                        </div>
+                        <div class="linkedin-badge-dark" id="linkedinBadgeDark">
+                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="-gauravpandey" data-version="v1">
+                                <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-gauravpandey?trk=profile-badge">Gaurav Pandey</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -2142,19 +2213,11 @@
                 <div class="section-badge">Academic Background</div>
                 <h2 class="section-title">Education</h2>
                 <p class="section-description">
-                    Continuous learning journey from foundational computer science to advanced AI specialization.
+                    Strong educational foundation from foundational computer science to advanced computing specialization.
                 </p>
             </div>
             
             <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon">🎓</div>
-                    <h3>Indian Institute of Technology Jodhpur</h3>
-                    <div class="degree">Master of Technology - Artificial Intelligence</div>
-                    <div class="duration">2025 - Present</div>
-                    <p>Currently pursuing advanced studies in AI and machine learning at one of India's premier technical institutions.</p>
-                </div>
-                
                 <div class="education-card">
                     <div class="education-icon">💻</div>
                     <h3>Center for Development of Advanced Computing</h3>
@@ -2264,7 +2327,7 @@
             }, 2000);
         });
 
-        // Theme Toggle Functionality
+        // Theme Toggle Functionality with LinkedIn Badge Update
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         
@@ -2276,8 +2339,21 @@
             const theme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             body.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
+            
+            // Update LinkedIn badge theme
+            updateLinkedInBadge(theme);
+            
             showNotification(`Switched to ${theme} mode! ✨`, 'success');
         });
+
+        // Update LinkedIn Badge based on theme
+        function updateLinkedInBadge(theme) {
+            // The CSS will handle the display/hide automatically
+            // LinkedIn badges will be re-rendered by their script
+            if (window.LI && window.LI.PROFILE_BADGE) {
+                window.LI.PROFILE_BADGE.init();
+            }
+        }
 
         // Notification System
         function showNotification(message, type = 'success') {
@@ -2305,14 +2381,14 @@ Current: Walmart (Dec 2023 - Present)
 Previous: CommerceIQ, PayPal, Capillary Technologies, CDAC, GlobalLogic
 
 Skills: Java, Spring Boot, AWS, Microservices, System Design
-Education: M.Tech AI (IIT Jodhpur), PG Diploma (CDAC), B.Tech IT
+Education: PG Diploma (CDAC), B.Tech IT
 
 Content:
 Newsletter: https://www.linkedin.com/newsletters/7048724214635266048/
 YouTube: https://www.youtube.com/@scaletobillions
 
 Contact: gaurav17p@gmail.com
-LinkedIn: linkedin.com/in/-gauravpandey
+LinkedIn: https://in.linkedin.com/in/-gauravpandey
 GitHub: github.com/gaurav-kr-pandey
             `;
             
@@ -2490,21 +2566,25 @@ GitHub: github.com/gaurav-kr-pandey
         });
 
         console.log(`
-        🚀 Complete Modern Portfolio Loaded!
+        🚀 Updated Portfolio Loaded Successfully!
+        
+        ✅ Updates Made:
+        • Removed IIT Jodhpur M.Tech from Education
+        • Added LinkedIn Badge with Theme Switching
+        • Updated Hero Description
+        • Enhanced LinkedIn Integration
         
         ✨ All Features:
-        • Glassmorphism Navigation Bar (No Overlapping!)
-        • Experience Section (All 6 Companies)
-        • Skills & Technologies
-        • Education Section
-        • Contact Information
+        • Glassmorphism Navigation Bar
+        • All Experience & Skills Sections  
         • Newsletter & YouTube Integration
-        • Modern Animations & Transitions
+        • LinkedIn Badge (Theme Responsive)
         • Dark/Light Theme Toggle
-        • Mobile-First Responsive Design
+        • Mobile Responsive Design
         
         📧 Newsletter: https://www.linkedin.com/newsletters/7048724214635266048/
         📺 YouTube: https://www.youtube.com/@scaletobillions
+        💼 LinkedIn: https://in.linkedin.com/in/-gauravpandey
         💼 Gaurav Pandey - Senior Software Engineer (7.5+ Years)
         `);
     </script>
