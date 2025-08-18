@@ -576,7 +576,7 @@
             border-top: 1px solid var(--border);
         }
 
-        /* Enhanced Hero Section */
+        /* Enhanced Hero Section - CLEANED UP */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -697,173 +697,6 @@
             }
         }
 
-        /* REDESIGNED Content Creator & LinkedIn Sections */
-        .hero-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 1s var(--smooth) 1.2s forwards;
-        }
-
-        .feature-card {
-            background: var(--surface);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid var(--border);
-            box-shadow: var(--neu-light);
-            transition: all 0.4s var(--spring);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-2);
-            transform: scaleX(0);
-            transition: transform 0.4s var(--smooth);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .feature-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-2);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s var(--bounce);
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: rotate(10deg) scale(1.1);
-        }
-
-        .feature-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 0;
-        }
-
-        .feature-content {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .feature-link {
-            background: var(--gradient-2);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.875rem;
-            transition: all 0.3s var(--bounce);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            overflow: hidden;
-            flex: 1;
-            justify-content: center;
-        }
-
-        .feature-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .feature-link:hover::before {
-            left: 100%;
-        }
-
-        .feature-link:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .youtube-link {
-            background: var(--gradient-3);
-        }
-
-        .linkedin-feature .feature-icon {
-            background: var(--gradient-4);
-        }
-
-        .linkedin-feature .feature-card::before {
-            background: var(--gradient-4);
-        }
-
-        .linkedin-badge-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 60px;
-            opacity: 0;
-            animation: fadeInScale 0.8s var(--bounce) 0.3s forwards;
-        }
-
-        @keyframes fadeInScale {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-            from {
-                transform: scale(0.9);
-            }
-        }
-
-        /* Hide the inactive badge */
-        .linkedin-badge-light {
-            display: block;
-        }
-
-        .linkedin-badge-dark {
-            display: none;
-        }
-
-        [data-theme="dark"] .linkedin-badge-light {
-            display: none;
-        }
-
-        [data-theme="dark"] .linkedin-badge-dark {
-            display: block;
-        }
-
         /* Stats Grid */
         .hero-stats {
             display: grid;
@@ -871,7 +704,7 @@
             gap: 1rem;
             margin-bottom: 2.5rem;
             opacity: 0;
-            animation: fadeInUp 1s var(--smooth) 1.4s forwards;
+            animation: fadeInUp 1s var(--smooth) 1.2s forwards;
         }
 
         .stat {
@@ -928,7 +761,7 @@
             gap: 1rem;
             flex-wrap: wrap;
             opacity: 0;
-            animation: fadeInUp 1s var(--smooth) 1.6s forwards;
+            animation: fadeInUp 1s var(--smooth) 1.4s forwards;
         }
 
         .btn {
@@ -1584,6 +1417,251 @@
             line-height: 1.7;
         }
 
+        /* NEW CONNECT & FOLLOW SECTION */
+        .connect-section {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(59, 130, 246, 0.05) 100%);
+            position: relative;
+        }
+
+        .connect-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-mesh);
+            opacity: 0.3;
+        }
+
+        .connect-container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .connect-card {
+            background: var(--surface);
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: var(--neu-light);
+            border: 1px solid var(--border);
+            transition: all 0.4s var(--spring);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .connect-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .connect-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-2);
+            transform: scaleX(0);
+            transition: transform 0.4s var(--smooth);
+        }
+
+        .connect-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .connect-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .connect-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .connect-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--bounce);
+        }
+
+        .connect-card:hover .connect-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .newsletter-card .connect-icon {
+            background: var(--gradient-2);
+        }
+
+        .newsletter-card .connect-card::before {
+            background: var(--gradient-2);
+        }
+
+        .linkedin-card .connect-icon {
+            background: var(--gradient-4);
+        }
+
+        .linkedin-card .connect-card::before {
+            background: var(--gradient-4);
+        }
+
+        .youtube-card .connect-icon {
+            background: var(--gradient-3);
+        }
+
+        .youtube-card .connect-card::before {
+            background: var(--gradient-3);
+        }
+
+        .connect-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .connect-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .connect-content {
+            margin-bottom: 2rem;
+        }
+
+        .connect-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        /* Newsletter Button Styling */
+        .libutton {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 12px 24px;
+            text-align: center;
+            outline: none;
+            text-decoration: none !important;
+            color: #ffffff !important;
+            width: 100%;
+            height: 48px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #0A66C2, #004182);
+            font-family: "Inter", "SF Pro Text", Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s var(--bounce);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .libutton::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .libutton:hover::before {
+            left: 100%;
+        }
+
+        .libutton:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            color: #ffffff !important;
+        }
+
+        /* LinkedIn Badge Container */
+        .linkedin-badge-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80px;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border-radius: 15px;
+            border: 1px solid var(--border);
+        }
+
+        /* Hide the inactive badge */
+        .linkedin-badge-light {
+            display: block;
+        }
+
+        .linkedin-badge-dark {
+            display: none;
+        }
+
+        [data-theme="dark"] .linkedin-badge-light {
+            display: none;
+        }
+
+        [data-theme="dark"] .linkedin-badge-dark {
+            display: block;
+        }
+
+        /* YouTube Button */
+        .youtube-btn {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s var(--bounce);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .youtube-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .youtube-btn:hover::before {
+            left: 100%;
+        }
+
+        .youtube-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            color: white;
+        }
+
         /* Enhanced Contact Section */
         .contact {
             background: var(--bg-secondary);
@@ -1851,9 +1929,9 @@
                 gap: 3rem;
             }
 
-            .hero-features {
+            .connect-container {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 2rem;
             }
         }
 
@@ -1898,12 +1976,8 @@
                 font-size: 20px;
             }
 
-            .feature-content {
-                flex-direction: column;
-            }
-
-            .feature-link {
-                flex: none;
+            .connect-card {
+                padding: 2rem;
             }
         }
     </style>
@@ -1963,6 +2037,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="#connect" class="nav-link">
+                            <span>Connect</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#contact" class="nav-link">
                             <span>Contact</span>
                         </a>
@@ -1993,6 +2072,7 @@
                 <li><a href="#experience" class="nav-link"><span>Experience</span></a></li>
                 <li><a href="#skills" class="nav-link"><span>Skills</span></a></li>
                 <li><a href="#education" class="nav-link"><span>Education</span></a></li>
+                <li><a href="#connect" class="nav-link"><span>Connect</span></a></li>
                 <li><a href="#contact" class="nav-link"><span>Contact</span></a></li>
             </ul>
             <div class="mobile-actions">
@@ -2004,7 +2084,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- CLEAN HERO SECTION -->
     <section id="hero" class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -2016,43 +2096,6 @@
                     leading technical initiatives, and delivering innovative solutions. Currently driving 
                     critical projects at Walmart while sharing knowledge through content creation.
                 </p>
-
-                <!-- REDESIGNED Content Creator & LinkedIn Sections -->
-                <div class="hero-features">
-                    <div class="feature-card content-creator">
-                        <div class="feature-header">
-                            <div class="feature-icon">✨</div>
-                            <h3 class="feature-title">Content Creator</h3>
-                        </div>
-                        <div class="feature-content">
-                            <a href="https://www.linkedin.com/newsletters/7048724214635266048/" target="_blank" rel="noopener" class="feature-link newsletter-link">
-                                Newsletter 📧
-                            </a>
-                            <a href="https://www.youtube.com/@scaletobillions" target="_blank" rel="noopener" class="feature-link youtube-link">
-                                YouTube 📺
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="feature-card linkedin-feature">
-                        <div class="feature-header">
-                            <div class="feature-icon">💼</div>
-                            <h3 class="feature-title">Connect on LinkedIn</h3>
-                        </div>
-                        <div class="linkedin-badge-container">
-                            <div class="linkedin-badge-light" id="linkedinBadgeLight">
-                                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="-gauravpandey" data-version="v1">
-                                    <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-gauravpandey?trk=profile-badge">Gaurav Pandey</a>
-                                </div>
-                            </div>
-                            <div class="linkedin-badge-dark" id="linkedinBadgeDark">
-                                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="-gauravpandey" data-version="v1">
-                                    <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-gauravpandey?trk=profile-badge">Gaurav Pandey</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="hero-stats">
                     <div class="stat">
@@ -2142,7 +2185,7 @@
                 <div class="experience-card">
                     <div class="experience-header">
                         <div class="company-info">
-                            <div class="company-logo paypal">P</div>
+                                                        <div class="company-logo paypal">P</div>
                             <div class="company-details">
                                 <h3>PayPal</h3>
                                 <div class="job-title">Software Engineer II</div>
@@ -2153,7 +2196,7 @@
                     <ul class="achievement-list">
                         <li>Resolved P0 bugs, enhancing system reliability and reducing downtime by 5%</li>
                         <li>Created Grafana Dashboard to track chargebacks, improving monitoring efficiency by 30%</li>
-                                                <li>Managed chargebacks in Fraud Protection Team, reducing resolution time by 10%</li>
+                        <li>Managed chargebacks in Fraud Protection Team, reducing resolution time by 10%</li>
                     </ul>
                 </div>
 
@@ -2320,6 +2363,91 @@
         </div>
     </section>
 
+    <!-- NEW CONNECT & FOLLOW SECTION -->
+    <section id="connect" class="section connect-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">Stay Connected</div>
+                <h2 class="section-title">Connect & Follow</h2>
+                <p class="section-description">
+                    Follow my journey, get insights from my newsletter, and connect with me on various platforms 
+                    for the latest updates on technology, software engineering, and career growth.
+                </p>
+            </div>
+            
+            <div class="connect-container">
+                <!-- Newsletter Card -->
+                <div class="connect-card newsletter-card">
+                    <div class="connect-header">
+                        <div class="connect-icon">📧</div>
+                        <div>
+                            <h3 class="connect-title">Newsletter</h3>
+                            <p class="connect-subtitle">Scale to Billions</p>
+                        </div>
+                    </div>
+                    <div class="connect-content">
+                        <p class="connect-description">
+                            Get weekly insights on software engineering, system design, scaling applications, and career growth. 
+                            Join thousands of engineers who read my technical deep-dives and industry analysis.
+                        </p>
+                        <a class="libutton" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7048724214635266048" target="_blank">
+                            Subscribe on LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Profile Card -->
+                <div class="connect-card linkedin-card">
+                    <div class="connect-header">
+                        <div class="connect-icon">💼</div>
+                        <div>
+                            <h3 class="connect-title">LinkedIn Profile</h3>
+                            <p class="connect-subtitle">Professional Network</p>
+                        </div>
+                    </div>
+                    <div class="connect-content">
+                        <p class="connect-description">
+                            Connect with me on LinkedIn for professional networking, career insights, and industry discussions. 
+                            I regularly share technical content and career advice.
+                        </p>
+                        <div class="linkedin-badge-container">
+                            <div class="linkedin-badge-light" id="linkedinBadgeLight">
+                                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="-gauravpandey" data-version="v1">
+                                    <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-gauravpandey?trk=profile-badge">Gaurav Pandey</a>
+                                </div>
+                            </div>
+                            <div class="linkedin-badge-dark" id="linkedinBadgeDark">
+                                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="-gauravpandey" data-version="v1">
+                                    <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-gauravpandey?trk=profile-badge">Gaurav Pandey</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube Channel Card -->
+                <div class="connect-card youtube-card">
+                    <div class="connect-header">
+                        <div class="connect-icon">📺</div>
+                        <div>
+                            <h3 class="connect-title">YouTube Channel</h3>
+                            <p class="connect-subtitle">Scale to Billions</p>
+                        </div>
+                    </div>
+                    <div class="connect-content">
+                        <p class="connect-description">
+                            Watch in-depth technical videos, system design tutorials, and career guidance content. 
+                            Learn how to build and scale applications to serve millions of users.
+                        </p>
+                        <a href="https://www.youtube.com/@scaletobillions" target="_blank" rel="noopener" class="youtube-btn">
+                            Subscribe to Channel 📺
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="section-container">
@@ -2407,7 +2535,7 @@
         window.addEventListener('load', function() {
             setTimeout(() => {
                 document.getElementById('loadingScreen').classList.add('hide');
-            }, 1500); // Faster loading for better UX
+            }, 1500);
         });
 
         // Theme Toggle Functionality with LinkedIn Badge Update
@@ -2431,8 +2559,6 @@
 
         // Update LinkedIn Badge based on theme
         function updateLinkedInBadge(theme) {
-            // The CSS will handle the display/hide automatically
-            // LinkedIn badges will be re-rendered by their script
             if (window.LI && window.LI.PROFILE_BADGE) {
                 window.LI.PROFILE_BADGE.init();
             }
@@ -2629,7 +2755,7 @@ GitHub: github.com/gaurav-kr-pandey
         }, observerOptions);
 
         // Observe elements for animations
-        const animateElements = document.querySelectorAll('.section-header, .experience-card, .skill-category, .skills-visual, .education-card, .contact-info, .contact-visual, .hero-content');
+        const animateElements = document.querySelectorAll('.section-header, .experience-card, .skill-category, .skills-visual, .education-card, .contact-info, .contact-visual, .hero-content, .connect-card');
         animateElements.forEach(el => observer.observe(el));
 
         // Enhanced stagger animations
@@ -2648,46 +2774,35 @@ GitHub: github.com/gaurav-kr-pandey
             category.style.transitionDelay = `${index * 100}ms`;
         });
 
-        // Image Lazy Loading Optimization
-        const profileImages = document.querySelectorAll('.profile-pic');
-        profileImages.forEach(img => {
-            img.addEventListener('load', function() {
-                this.style.opacity = '1';
-            });
+        const connectCards = document.querySelectorAll('.connect-card');
+        connectCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 200}ms`;
         });
 
-        // Performance Enhancement: Preload critical images
-        function preloadCriticalImages() {
-            const criticalImages = ['profile_pic.jpeg'];
-            criticalImages.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-        }
-
-        // Call preload on page load
-        window.addEventListener('load', preloadCriticalImages);
-
         console.log(`
-        🚀 Ultimate Modern Portfolio 2025 Loaded!
+        🚀 Perfect Modern Portfolio 2025 Completed!
         
-        ✅ Complete Features:
-        • Your Profile Picture Integrated Everywhere
-        • Redesigned Content Creator & LinkedIn Sections  
+        ✅ All Features Implemented:
+        • Clean Hero Section (No Clutter!)
+        • Your Profile Picture Integrated  
+        • Dedicated Connect & Follow Section
+        • Newsletter Subscription Button
+        • LinkedIn Profile Badge (Theme Responsive)
+        • YouTube Channel Integration
         • Company Logos with Brand Colors
-        • Ultra-Fast Loading & Performance Optimized
+        • Ultra-Fast Loading & Performance
         • Perfect Responsive Design
         • Advanced Animations & Micro-interactions
         • Glassmorphism Navigation
         • All Experience & Skills Sections  
-        • Dark/Light Theme with LinkedIn Badge Switching
+        • Dark/Light Theme Toggle
         
         📧 Newsletter: https://www.linkedin.com/newsletters/7048724214635266048/
         📺 YouTube: https://www.youtube.com/@scaletobillions
         💼 LinkedIn: https://in.linkedin.com/in/-gauravpandey
         🚀 Gaurav Pandey - Senior Software Engineer (7.5+ Years)
         
-        This portfolio will absolutely impress recruiters! 🎯
+        This portfolio will absolutely WOW recruiters! 🎯✨
         `);
     </script>
 </body>
