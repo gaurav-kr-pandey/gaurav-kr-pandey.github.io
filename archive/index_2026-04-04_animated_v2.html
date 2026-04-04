@@ -147,13 +147,12 @@
     .tag { padding: 8px 10px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); font-size: 0.9rem; color: var(--text); }
 
     .timeline { display: grid; gap: 12px; }
-    .job { display: grid; grid-template-columns: 200px 1fr; gap: 14px; padding: 18px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: rgba(255,255,255,0.03); align-items: center; }
+    .job { display: grid; grid-template-columns: 160px 1fr; gap: 14px; padding: 18px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: rgba(255,255,255,0.03); }
     .job .meta { color: var(--muted); font-size: 0.95rem; }
     .job h4 { font-size: 1.2rem; }
     .job ul { list-style: none; display: grid; gap: 8px; margin-top: 10px; color: var(--muted); }
     .job li { position: relative; padding-left: 16px; }
     .job li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-1), var(--accent-3)); }
-    .job-logo { width: 72px; height: 72px; border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,0.06); padding: 8px; object-fit: cover; box-shadow: 0 12px 30px rgba(0,0,0,0.25); margin-bottom: 8px; }
 
     .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
     .skill { padding: 16px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--panel); }
@@ -288,87 +287,6 @@
       <div class="timeline">
         <div class="job reveal" data-tilt>
           <div>
-            <img class="job-logo" src="images/cdac.svg" alt="CDAC logo">
-            <div class="meta">Mar 2018 – Dec 2018</div>
-            <h4>Project Associate</h4>
-            <div class="meta">CDAC</div>
-          </div>
-          <div>
-            <ul>
-              <li>Built Spring Boot services for high-traffic health domain workloads (AIIMS).</li>
-              <li>Shipped fixes and features rapidly against live user feedback.</li>
-              <li>Kept monolith stable while delivering new capabilities.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="job reveal" data-tilt>
-          <div>
-            <img class="job-logo" src="images/globallogic.svg" alt="GlobalLogic logo">
-            <div class="meta">Dec 2018 – Dec 2020</div>
-            <h4>Software Engineer</h4>
-            <div class="meta">GlobalLogic</div>
-          </div>
-          <div>
-            <ul>
-              <li>Boosted performance 3x via WebSocket + Hazelcast strategies.</li>
-              <li>Designed resilient REST APIs and contributed to distributed patterns.</li>
-              <li>Handled production support with tight feedback loops.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="job reveal" data-tilt>
-          <div>
-            <img class="job-logo" src="images/capillary.svg" alt="Capillary logo">
-            <div class="meta">Dec 2020 – Sep 2021</div>
-            <h4>SDE</h4>
-            <div class="meta">Capillary Technologies</div>
-          </div>
-          <div>
-            <ul>
-              <li>Hardened microservices with retries, monitoring, and Resilience4j patterns.</li>
-              <li>Improved system reliability and reduced failure rates on external calls.</li>
-              <li>Drove scalability initiatives across architecture and operations.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="job reveal" data-tilt>
-          <div>
-            <img class="job-logo" src="images/paypal.svg" alt="PayPal logo">
-            <div class="meta">Oct 2021 – Aug 2022</div>
-            <h4>Software Engineer II</h4>
-            <div class="meta">PayPal</div>
-          </div>
-          <div>
-            <ul>
-              <li>Owned P0 fraud-protection incidents; improved MTTR and on-call hygiene.</li>
-              <li>Built Grafana chargeback dashboards to surface blind spots.</li>
-              <li>Cut resolution times with better runbooks and alert quality.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="job reveal" data-tilt>
-          <div>
-            <img class="job-logo" src="images/commerceiq.svg" alt="CommerceIQ logo">
-            <div class="meta">Aug 2022 – Nov 2023</div>
-            <h4>SDE-II</h4>
-            <div class="meta">CommerceIQ</div>
-          </div>
-          <div>
-            <ul>
-              <li>Built microservices from scratch with Java + Spring Boot, tuned for concurrency.</li>
-              <li>Created Step Function pipelines with batching to fix contention and cut cost.</li>
-              <li>Led and mentored while shipping Media Planner on schedule.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="job reveal" data-tilt>
-          <div>
-            <img class="job-logo" src="images/walmart.svg" alt="Walmart logo">
             <div class="meta">Dec 2023 – Present</div>
             <h4>Senior Software Engineer</h4>
             <div class="meta">Walmart</div>
@@ -378,6 +296,51 @@
               <li>Migrated 7.5M users with market-specific strategies and zero major incidents.</li>
               <li>Aligned auth/SSO and legacy fixes while leading sprint planning and reporting.</li>
               <li>Guided teams through cutovers with dashboards and rollback levers ready.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job reveal" data-tilt>
+          <div>
+            <div class="meta">Aug 2022 – Nov 2023</div>
+            <h4>SDE-II</h4>
+            <div class="meta">CommerceIQ</div>
+          </div>
+          <div>
+            <ul>
+              <li>Built microservices from scratch with Java + Spring Boot, tuned for concurrency.</li>
+              <li>Created Step Function pipelines with batching to fix contention and cut cost.</li>
+              <li>Provided hands-on leadership and mentoring while shipping Media Planner.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job reveal" data-tilt>
+          <div>
+            <div class="meta">Oct 2021 – Aug 2022</div>
+            <h4>Software Engineer II</h4>
+            <div class="meta">PayPal</div>
+          </div>
+          <div>
+            <ul>
+              <li>Owned P0 production firefights in fraud protection; improved MTTR.</li>
+              <li>Built Grafana chargeback dashboards that exposed blind spots.</li>
+              <li>Reduced resolution times with better runbooks and alert hygiene.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job reveal" data-tilt>
+          <div>
+            <div class="meta">2018 – 2021</div>
+            <h4>Software Engineer / SDE</h4>
+            <div class="meta">GlobalLogic, Capillary</div>
+          </div>
+          <div>
+            <ul>
+              <li>Boosted performance 3x via WebSocket + Hazelcast strategies.</li>
+              <li>Hardened microservices with retries, monitoring, and resiliency patterns.</li>
+              <li>Designed REST APIs and handled production support with short feedback loops.</li>
             </ul>
           </div>
         </div>
