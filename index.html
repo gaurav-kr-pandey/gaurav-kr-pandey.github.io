@@ -3,184 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gaurav Pandey — backend engineer crafting resilient microservices, migrations, and high-scale systems.">
+  <meta name="description" content="Gaurav Pandey — backend engineer shaping resilient microservices, migrations, and high-scale systems.">
   <title>Gaurav Pandey | Backend Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050810;
-      --panel: rgba(12, 18, 32, 0.74);
-      --panel-strong: rgba(10, 16, 28, 0.92);
-      --line: rgba(255, 255, 255, 0.08);
-      --text: #f4f7fb;
-      --muted: #a9b7d2;
-      --accent-1: #7cf2d4;
-      --accent-2: #7cb3ff;
+      --bg: #05060d;
+      --bg-2: #0a0f1f;
+      --panel: rgba(13,18,34,0.7);
+      --border: rgba(255,255,255,0.08);
+      --text: #f5f7fb;
+      --muted: #aeb7ce;
+      --accent: #7cf2d4;
+      --accent-2: #8fb3ff;
       --accent-3: #f7c266;
-      --glow: 0 30px 90px rgba(7, 182, 201, 0.2);
+      --card-shadow: 0 25px 80px rgba(0,0,0,0.32);
       --radius-xl: 30px;
       --radius-lg: 22px;
       --radius-md: 16px;
-      --max-width: 1200px;
+      --max-w: 1200px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'Sora', system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 18% 20%, rgba(124, 242, 212, 0.12), transparent 38%),
-                  radial-gradient(circle at 78% 12%, rgba(124, 179, 255, 0.14), transparent 42%),
-                  linear-gradient(140deg, #050810 0%, #080c18 50%, #050810 100%);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 15% 20%, rgba(124,242,212,0.14), transparent 32%),
+                  radial-gradient(circle at 82% 12%, rgba(143,179,255,0.16), transparent 36%),
+                  linear-gradient(160deg, var(--bg), var(--bg-2) 50%, #05060d 100%);
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
     }
-
-    body::after {
+    body::before {
       content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background: radial-gradient(circle at 30% 70%, rgba(247, 194, 102, 0.13), transparent 45%),
-                  radial-gradient(circle at 80% 80%, rgba(124, 179, 255, 0.12), transparent 40%);
-      filter: blur(38px);
-      opacity: 0.7;
+      position: fixed; inset: 0; pointer-events: none;
+      background: radial-gradient(circle at 40% 60%, rgba(247,194,102,0.12), transparent 38%),
+                  radial-gradient(circle at 80% 80%, rgba(124,242,212,0.1), transparent 34%);
+      filter: blur(40px); opacity: .8;
       animation: hue 48s linear infinite;
     }
-
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
+    .shell { width: min(var(--max-w), calc(100% - 32px)); margin: 0 auto; }
 
-    .shell { width: min(var(--max-width), calc(100% - 32px)); margin: 0 auto; }
-
-    header.topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(5, 8, 16, 0.88), rgba(5, 8, 16, 0.55));
-      border-bottom: 1px solid var(--line);
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(180deg, rgba(5,7,14,0.92), rgba(5,7,14,0.4));
+      border-bottom: 1px solid var(--border);
     }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:0.2px; }
+    .brand-mark { width:46px; height:46px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#061019; font-family:'Space Grotesk',sans-serif; box-shadow: var(--card-shadow); }
+    nav { display:flex; flex-wrap:wrap; gap:10px; }
+    nav a { padding:10px 12px; border-radius:999px; color:var(--muted); font-size:0.95rem; border:1px solid transparent; }
+    nav a:hover, nav a:focus-visible { color:var(--text); border-color:var(--border); background:rgba(255,255,255,0.05); outline:none; }
+    .pill { border:1px solid var(--border); padding:10px 14px; border-radius:999px; }
 
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 0;
-    }
+    .hero { padding:56px 0 34px; position: relative; }
+    .grid-bg { position:absolute; inset:0; opacity:0.25; pointer-events:none; background-size: 120px 120px; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); mask-image: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.9), transparent 70%); }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(320px,0.9fr); gap:26px; align-items:stretch; position:relative; z-index:1; }
+    .panel { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-xl); padding:30px; box-shadow: var(--card-shadow); position:relative; overflow:hidden; backdrop-filter: blur(12px); }
+    .panel::after { content:""; position:absolute; inset:auto -30% -60% auto; width:240px; height:240px; border-radius:50%; background:radial-gradient(circle, rgba(124,242,212,0.1), transparent 70%); pointer-events:none; }
+    .hero-copy { display:grid; gap:16px; animation: float 18s ease-in-out infinite; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; padding:9px 14px; border-radius:999px; border:1px solid rgba(124,242,212,0.4); color:var(--accent); text-transform:uppercase; letter-spacing:0.1em; font-size:0.8rem; }
+    .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 12px rgba(247,194,102,0.9); }
+    h1 { font-size: clamp(2.8rem, 6vw, 5.2rem); line-height:0.95; font-family:'Space Grotesk', sans-serif; }
+    h1 em { background:linear-gradient(120deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; color:transparent; }
+    .lede { color:var(--muted); max-width:66ch; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.05); color:var(--text); font-weight:700; transition: transform .25s ease, background .25s ease, border-color .25s ease; }
+    .btn:hover, .btn:focus-visible { transform: translateY(-2px); background:rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.22); outline:none; }
+    .btn.primary { background:linear-gradient(120deg,var(--accent),var(--accent-3)); color:#061019; border-color:transparent; box-shadow: var(--card-shadow); }
+    .metric-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap:12px; }
+    .metric { padding:14px; border-radius:var(--radius-md); border:1px solid var(--border); background:rgba(255,255,255,0.03); }
+    .metric strong { display:block; font-size:1.8rem; font-family:'Space Grotesk',sans-serif; }
+    .metric span { color:var(--muted); font-size:0.95rem; }
 
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
-    .brand-mark {
-      width: 46px; height: 46px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-      display: grid; place-items: center;
-      color: #041423;
-      font-family: 'Space Grotesk', sans-serif;
-      box-shadow: var(--glow);
-    }
+    .hero-visual { display:grid; gap:14px; background:linear-gradient(180deg, rgba(124,179,255,0.16), rgba(5,8,16,0.9)); }
+    .portrait { position:relative; border-radius:22px; overflow:hidden; border:1px solid var(--border); aspect-ratio: 4/5; background:#0c1626; }
+    .portrait img { width:100%; height:100%; object-fit:cover; mix-blend-mode:screen; filter:saturate(1.05); }
+    .orb { position:absolute; inset:-30px; border:1px solid rgba(124,242,212,0.18); border-radius:50%; animation: spin 24s linear infinite; }
+    .chip-row { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip { padding:10px 12px; border-radius:12px; background:rgba(255,255,255,0.06); border:1px solid var(--border); color:var(--muted); font-size:0.9rem; }
 
-    nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    nav a { padding: 10px 12px; border-radius: 999px; color: var(--muted); font-size: 0.95rem; }
-    nav a:hover, nav a:focus-visible { color: var(--text); background: rgba(255,255,255,0.06); outline: none; }
-    .pill { padding: 10px 14px; border-radius: 999px; border: 1px solid var(--line); }
+    section { padding:38px 0; position:relative; z-index:1; }
+    .section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+    .section-head h2 { font-size: clamp(2rem, 3.6vw, 3rem); font-family:'Space Grotesk',sans-serif; }
+    .section-head p { color:var(--muted); max-width:54ch; }
 
-    .cta { background: linear-gradient(120deg, var(--accent-1), var(--accent-3)); color: #061019; font-weight: 800; box-shadow: var(--glow); border: none; }
+    .cases { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px; }
+    .card { position:relative; padding:20px; border-radius:var(--radius-lg); border:1px solid var(--border); background:rgba(255,255,255,0.04); overflow:hidden; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .card::after { content:""; position:absolute; inset:auto -20% -60% auto; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, rgba(124,179,255,0.14), transparent 70%); }
+    .card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.16); box-shadow: var(--card-shadow); }
+    .card h3 { font-size:1.2rem; margin-bottom:6px; }
+    .card p { color:var(--muted); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .tag { padding:8px 10px; border-radius:10px; background:rgba(255,255,255,0.06); border:1px solid var(--border); font-size:0.9rem; }
 
-    .hero { padding: 56px 0 36px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(320px,0.9fr); gap: 28px; align-items: stretch; }
+    .timeline { display:grid; gap:12px; }
+    .job { display:grid; grid-template-columns: 200px 1fr; gap:14px; padding:18px; border-radius:var(--radius-lg); border:1px solid var(--border); background:rgba(255,255,255,0.03); align-items:center; }
+    .job .meta { color:var(--muted); font-size:0.95rem; }
+    .job h4 { font-size:1.2rem; }
+    .job ul { list-style:none; display:grid; gap:8px; margin-top:10px; color:var(--muted); }
+    .job li { position:relative; padding-left:16px; }
+    .job li::before { content:""; position:absolute; left:0; top:0.65em; width:7px; height:7px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent-3)); }
+    .job-logo { width:72px; height:72px; border-radius:18px; border:1px solid var(--border); background:rgba(255,255,255,0.06); padding:8px; object-fit:cover; box-shadow:0 12px 30px rgba(0,0,0,0.25); margin-bottom:8px; }
 
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--glow);
-      overflow: hidden;
-      position: relative;
-      backdrop-filter: blur(12px);
-    }
+    .skills { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px; }
+    .skill { padding:16px; border-radius:var(--radius-lg); border:1px solid var(--border); background:rgba(255,255,255,0.04); }
+    .skill h4 { font-size:1.05rem; margin-bottom:8px; }
+    .skill .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .skill .chips span { padding:8px 10px; border-radius:999px; background:rgba(255,255,255,0.06); border:1px solid var(--border); font-size:0.9rem; }
 
-    .hero-copy { padding: 32px; display: grid; gap: 18px; animation: float 16s ease-in-out infinite; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(124, 242, 212, 0.4); color: var(--accent-1); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.82rem; }
-    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-3); box-shadow: 0 0 14px rgba(247, 194, 102, 0.9); }
+    .labs { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:12px; }
+    .lab { padding:18px; border-radius:var(--radius-lg); border:1px solid var(--border); background:rgba(255,255,255,0.04); position:relative; overflow:hidden; }
+    .lab h3 { font-size:1.1rem; margin-bottom:6px; }
+    .lab p { color:var(--muted); }
 
-    h1 { font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: 0.95; font-family: 'Space Grotesk', sans-serif; }
-    h1 em { display: inline-block; background: linear-gradient(120deg, var(--accent-1), var(--accent-2)); -webkit-background-clip: text; color: transparent; }
-    .lede { color: var(--muted); max-width: 62ch; }
+    .cta-band { padding:26px; border-radius:var(--radius-xl); border:1px solid var(--border); background:linear-gradient(135deg, rgba(124,242,212,0.14), rgba(143,179,255,0.14)); display:grid; gap:12px; box-shadow: var(--card-shadow); }
 
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 18px; border-radius: 12px; font-weight: 700; border: 1px solid var(--line); background: rgba(255,255,255,0.04); color: var(--text); transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease; }
-    .btn:hover, .btn:focus-visible { transform: translateY(-2px); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); outline: none; }
-    .btn.primary { background: linear-gradient(120deg, var(--accent-1), var(--accent-3)); color: #061019; border-color: transparent; box-shadow: var(--glow); }
+    .contact { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .contact .row { padding:16px; border-radius:var(--radius-lg); border:1px solid var(--border); background:rgba(255,255,255,0.04); display:grid; gap:4px; }
+    .contact strong { font-size:1.02rem; }
+    .contact span { color:var(--muted); }
 
-    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
-    .metric { padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--line); background: rgba(255,255,255,0.03); }
-    .metric strong { display: block; font-size: 1.8rem; font-family: 'Space Grotesk', sans-serif; }
-    .metric span { color: var(--muted); font-size: 0.95rem; }
+    footer { padding:28px 0 48px; color:var(--muted); }
 
-    .hero-visual { padding: 26px; display: grid; gap: 14px; background: var(--panel-strong); position: relative; }
-    .hero-visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 10%, rgba(124,179,255,0.18), transparent 36%), radial-gradient(circle at 20% 80%, rgba(124,242,212,0.16), transparent 40%); pointer-events: none; }
+    .reveal { opacity:0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in { opacity:1; transform: translateY(0); }
 
-    .portrait-wrap { position: relative; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(160deg, rgba(124,179,255,0.24), rgba(12,18,32,0.8)); }
-    .portrait-wrap img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: screen; filter: saturate(1.05); }
-    .orbit { position: absolute; inset: -30px; border: 1px solid rgba(124, 242, 212, 0.2); border-radius: 50%; animation: spin 26s linear infinite; }
-
-    .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .chip { padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; }
-
-    section { padding: 36px 0; }
-    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; flex-wrap: wrap; }
-    .section-head h2 { font-size: clamp(1.9rem, 3vw, 2.8rem); font-family: 'Space Grotesk', sans-serif; }
-    .section-head p { max-width: 54ch; color: var(--muted); }
-
-    .cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-    .card { padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--panel); position: relative; overflow: hidden; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
-    .card::after { content: ""; position: absolute; inset: auto -30% -60% auto; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(124,242,212,0.12), transparent 70%); pointer-events: none; }
-    .card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.16); box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
-    .card h3 { font-size: 1.25rem; margin-bottom: 6px; }
-    .card p { color: var(--muted); }
-    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .tag { padding: 8px 10px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); font-size: 0.9rem; color: var(--text); }
-
-    .timeline { display: grid; gap: 12px; }
-    .job { display: grid; grid-template-columns: 200px 1fr; gap: 14px; padding: 18px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: rgba(255,255,255,0.03); align-items: center; }
-    .job .meta { color: var(--muted); font-size: 0.95rem; }
-    .job h4 { font-size: 1.2rem; }
-    .job ul { list-style: none; display: grid; gap: 8px; margin-top: 10px; color: var(--muted); }
-    .job li { position: relative; padding-left: 16px; }
-    .job li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-1), var(--accent-3)); }
-    .job-logo { width: 72px; height: 72px; border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,0.06); padding: 8px; object-fit: cover; box-shadow: 0 12px 30px rgba(0,0,0,0.25); margin-bottom: 8px; }
-
-    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-    .skill { padding: 16px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--panel); }
-    .skill h4 { font-size: 1.05rem; margin-bottom: 8px; }
-    .skill .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill .chips span { padding: 8px 10px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--line); font-size: 0.9rem; }
-
-    .cta-band { padding: 28px; border-radius: var(--radius-xl); border: 1px solid var(--line); background: linear-gradient(135deg, rgba(124, 242, 212, 0.14), rgba(124, 179, 255, 0.14)); display: grid; gap: 12px; }
-
-    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .contact .row { padding: 16px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--panel); display: grid; gap: 6px; }
-    .contact strong { font-size: 1.05rem; }
-    .contact span { color: var(--muted); }
-
-    footer { padding: 24px 0 48px; color: var(--muted); }
-
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .reveal.in { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 960px) {
+    @media (max-width: 980px) {
       .hero-grid { grid-template-columns: 1fr; }
       .job { grid-template-columns: 1fr; }
-      .contact { grid-template-columns: 1fr; }
+      .contact { grid-template-columns:1fr; }
     }
     @media (max-width: 640px) {
-      nav { width: 100%; justify-content: flex-start; }
-      .hero { padding-top: 36px; }
+      nav { width:100%; justify-content:flex-start; }
       h1 { font-size: clamp(2.4rem, 8vw, 3.6rem); }
     }
 
@@ -194,20 +155,21 @@
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="shell topbar-inner">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <header>
+    <div class="shell topbar">
       <a class="brand" href="#top">
         <div class="brand-mark">GP</div>
         <div>
           <div>Gaurav Pandey</div>
-          <small style="color: var(--muted);">Backend & Platform Engineer</small>
+          <small style="color:var(--muted);">Backend & Platform Engineer</small>
         </div>
       </a>
-      <nav aria-label="Main">
+      <nav aria-label="Primary">
         <a href="#work">Impact</a>
         <a href="#experience">Experience</a>
         <a href="#stack">Stack</a>
-        <a href="#contact" class="pill">Let’s talk</a>
+        <a href="#contact" class="pill">Contact</a>
       </nav>
     </div>
   </header>
@@ -216,29 +178,29 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="panel hero-copy reveal">
-          <div class="eyebrow">Systems that stay online</div>
-          <h1>Building backends with <em>clarity</em> and <em>calm</em> at scale.</h1>
-          <p class="lede">Senior engineer focused on microservices, migrations, and performance work across commerce and fintech. I make hard systems feel predictable—7.5M users migrated, on-call reduced, and throughput lifted without drama.</p>
+          <div class="eyebrow">Calm at scale</div>
+          <h1>I design backends with <em>predictable behavior</em> and <em>headroom</em>.</h1>
+          <p class="lede">7.5+ years across commerce, fintech, and platforms. I migrate millions of users safely, fix concurrency pain, and keep services boring for customers and adrenaline-free for on-call.</p>
           <div class="actions">
             <a class="btn primary" href="mailto:gaurav17p@gmail.com">Book a call</a>
             <a class="btn" href="https://github.com/gaurav-kr-pandey" target="_blank" rel="noreferrer">View GitHub</a>
           </div>
           <div class="metric-grid">
-            <div class="metric"><strong>7.5M</strong><span>users migrated safely</span></div>
-            <div class="metric"><strong>3x</strong><span>performance lift on critical paths</span></div>
+            <div class="metric"><strong>7.5M</strong><span>users migrated without major incident</span></div>
+            <div class="metric"><strong>3x</strong><span>throughput gains on critical paths</span></div>
             <div class="metric"><strong>7.5+</strong><span>years in production systems</span></div>
           </div>
         </div>
 
         <div class="panel hero-visual reveal">
-          <div class="portrait-wrap">
-            <div class="orbit"></div>
+          <div class="portrait" data-parallax>
+            <div class="orb"></div>
             <img src="images/profile_pic.jpg" alt="Portrait of Gaurav Pandey">
           </div>
           <div class="chip-row">
             <span class="chip">Java · Spring Boot · Microservices</span>
             <span class="chip">AWS · Kafka · Resilience</span>
-            <span class="chip">On-call leadership</span>
+            <span class="chip">Migrations · On-call leadership</span>
           </div>
         </div>
       </div>
@@ -247,32 +209,26 @@
     <section id="work">
       <div class="section-head reveal">
         <div>
-          <div class="eyebrow">Selected impact</div>
-          <h2>Work that changed how systems behaved.</h2>
+          <div class="eyebrow">Impact</div>
+          <h2>Work that changed behavior, not just dashboards.</h2>
         </div>
-        <p>Case-study style highlights instead of generic project tiles. Each one had a measurable effect on reliability, velocity, or cost.</p>
+        <p>Highlights framed by outcomes: reliability, cost, and speed. No filler projects.</p>
       </div>
       <div class="cases">
         <article class="card reveal" data-tilt>
           <h3>7.5M user migration with SSO alignment</h3>
-          <p>Led Walmart’s cross-market migration; built playbooks, staged cutovers, and kept auth steady across legacy systems.</p>
-          <div class="tag-row">
-            <span class="tag">Migrations</span><span class="tag">Auth/SSO</span><span class="tag">Observability</span>
-          </div>
+          <p>Playbooks, staged cutovers, and observability to keep auth stable across legacy surfaces at Walmart.</p>
+          <div class="tag-row"><span class="tag">Migrations</span><span class="tag">SSO</span><span class="tag">Observability</span></div>
         </article>
         <article class="card reveal" data-tilt>
-          <h3>Microservices from zero for high-throughput media planning</h3>
-          <p>At CommerceIQ, designed Java/Spring Boot services with AWS Step Functions + batching to tame concurrency and cost.</p>
-          <div class="tag-row">
-            <span class="tag">Java</span><span class="tag">Step Functions</span><span class="tag">Cost control</span>
-          </div>
+          <h3>Microservices from zero for media planning</h3>
+          <p>Java/Spring Boot services with Step Functions and batching to tame concurrency and cost at CommerceIQ.</p>
+          <div class="tag-row"><span class="tag">Java</span><span class="tag">Step Functions</span><span class="tag">Cost control</span></div>
         </article>
         <article class="card reveal" data-tilt>
           <h3>Fraud workflows with tighter feedback loops</h3>
-          <p>PayPal chargeback visibility via Grafana and cleaner on-call practices; reduced turnaround and surprises in production.</p>
-          <div class="tag-row">
-            <span class="tag">Grafana</span><span class="tag">On-call</span><span class="tag">Stability</span>
-          </div>
+          <p>Grafana visibility and cleaner on-call practices at PayPal; MTTR down, surprises down.</p>
+          <div class="tag-row"><span class="tag">Grafana</span><span class="tag">On-call</span><span class="tag">Stability</span></div>
         </article>
       </div>
     </section>
@@ -281,9 +237,9 @@
       <div class="section-head reveal">
         <div>
           <div class="eyebrow">Experience</div>
-          <h2>Roles where reliability, delivery, and scale met.</h2>
+          <h2>Chronology of keeping systems calm.</h2>
         </div>
-        <p>Commerce, fintech, and platform work where keeping systems boring for users required brave engineering underneath.</p>
+        <p>From public-sector scale-ups to global commerce platforms, ordered CDAC → Walmart.</p>
       </div>
       <div class="timeline">
         <div class="job reveal" data-tilt>
@@ -320,7 +276,7 @@
 
         <div class="job reveal" data-tilt>
           <div>
-            <img class="job-logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImczIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzFiYjFmZiIgb2Zmc2V0PSIwJSIvPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMThkMjZmIiBvZmZzZXQ9IjEwMCUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiByeD0iMjgiIGZpbGw9InVybCgjZzMpIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1NSUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSInU29yYScsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI2NCIgZm9udC13ZWlnaHQ9IjgwMCI+Q0FQPC90ZXh0Pgo8L3N2Zz4K" alt="Capillary logo">
+            <img class="job-logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImczIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzFiYjFmZiIgb2Zmc2V0PSIwJSIvPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIxOGQyNmYiIG9mZnNldD0iMTAwJSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHJ4PSIyOCIgZmlsbD0idXJsKCNnMykiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjU1JSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IidTb3JhJyxzYW5zLXNlcmlmIiBmb250LXNpemU9IjY0IiBmb250LXdlaWdodD0iODAwIj5DQVAgPC90ZXh0Pgo8L3N2Zz4K" alt="Capillary logo">
             <div class="meta">Dec 2020 – Sep 2021</div>
             <h4>SDE</h4>
             <div class="meta">Capillary Technologies</div>
@@ -388,47 +344,66 @@
       <div class="section-head reveal">
         <div>
           <div class="eyebrow">Stack</div>
-          <h2>Tools I reach for when uptime matters.</h2>
+          <h2>Tools chosen for durability and clarity.</h2>
         </div>
-        <p>Picked for durability, debuggability, and team velocity—rather than novelty.</p>
+        <p>Practical picks that make systems observable, debuggable, and scalable.</p>
       </div>
       <div class="skills">
         <div class="skill reveal" data-tilt>
           <h4>Core Backend</h4>
-          <div class="chips">
-            <span>Java</span><span>Spring Boot</span><span>REST</span><span>Multithreading</span><span>Hibernate</span>
-          </div>
+          <div class="chips"><span>Java</span><span>Spring Boot</span><span>REST</span><span>Multithreading</span><span>Hibernate</span></div>
         </div>
         <div class="skill reveal" data-tilt>
           <h4>Cloud & Messaging</h4>
-          <div class="chips">
-            <span>AWS</span><span>Step Functions</span><span>SQS</span><span>S3</span><span>Kafka</span>
-          </div>
+          <div class="chips"><span>AWS</span><span>Step Functions</span><span>SQS</span><span>S3</span><span>Kafka</span></div>
         </div>
         <div class="skill reveal" data-tilt>
           <h4>Reliability & Observability</h4>
-          <div class="chips">
-            <span>Grafana</span><span>Resilience4j</span><span>Hazelcast</span><span>Docker</span><span>On-call</span>
-          </div>
+          <div class="chips"><span>Grafana</span><span>Resilience4j</span><span>Hazelcast</span><span>Docker</span><span>On-call</span></div>
         </div>
         <div class="skill reveal" data-tilt>
           <h4>Ways of working</h4>
-          <div class="chips">
-            <span>Leading migrations</span><span>Incident response</span><span>Tech mentoring</span><span>Delivery playbooks</span>
-          </div>
+          <div class="chips"><span>Migrations</span><span>Incident response</span><span>Mentoring</span><span>Delivery playbooks</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="labs">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">Labs</div>
+          <h2>Side work and explorations.</h2>
+        </div>
+        <p>Snapshots of personal builds that stress-test ideas before they hit production.</p>
+      </div>
+      <div class="labs">
+        <div class="lab reveal" data-tilt>
+          <h3>Scalable Chat App</h3>
+          <p>WebSocket + Spring Boot experiment for real-time messaging; tuned for throughput.</p>
+          <div class="tag-row"><span class="tag">WebSocket</span><span class="tag">Spring</span><span class="tag">Scaling</span></div>
+        </div>
+        <div class="lab reveal" data-tilt>
+          <h3>Resilience Patterns Pack</h3>
+          <p>Reusable Resilience4j templates for retries, backoff, and circuit breakers.</p>
+          <div class="tag-row"><span class="tag">Resilience4j</span><span class="tag">Templates</span></div>
+        </div>
+        <div class="lab reveal" data-tilt>
+          <h3>Migration Playbook</h3>
+          <p>Checklists and scripts for dry-runs, data validation, and rollback paths.</p>
+          <div class="tag-row"><span class="tag">Migrations</span><span class="tag">Runbooks</span></div>
         </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="cta-band reveal">
-        <div class="section-head" style="margin-bottom: 0;">
+        <div class="section-head" style="margin-bottom:0;">
           <div>
             <div class="eyebrow">Contact</div>
-            <h2>Let’s build the resilient version of your backend.</h2>
+            <h2>Let’s make your backend feel calm.</h2>
           </div>
         </div>
-        <p>Available for senior backend roles, migrations, platform hardening, and architecture partnerships.</p>
+        <p>Open to senior backend/platform roles, migrations, and reliability engagements.</p>
         <div class="contact">
           <div class="row"><strong>Email</strong><span><a href="mailto:gaurav17p@gmail.com">gaurav17p@gmail.com</a></span></div>
           <div class="row"><strong>Phone</strong><span><a href="tel:+918081887885">+91 80818 87885</a></span></div>
@@ -436,7 +411,7 @@
           <div class="row"><strong>GitHub</strong><span><a href="https://github.com/gaurav-kr-pandey" target="_blank" rel="noreferrer">github.com/gaurav-kr-pandey</a></span></div>
         </div>
         <div class="actions">
-          <a class="btn primary" href="mailto:gaurav17p@gmail.com">Send an email</a>
+          <a class="btn primary" href="mailto:gaurav17p@gmail.com">Email me</a>
           <a class="btn" href="https://www.linkedin.com/newsletters/7048724214635266048/" target="_blank" rel="noreferrer">Read the newsletter</a>
         </div>
       </div>
@@ -444,9 +419,9 @@
   </main>
 
   <footer class="shell">
-    <div class="section-head" style="align-items:center; margin-bottom:12px;">
-      <h2 style="font-size:1.2rem;">Gaurav Pandey</h2>
-      <p>Backend systems with clarity and momentum.</p>
+    <div class="section-head" style="align-items:center; margin-bottom:10px;">
+      <h2 style="font-size:1.1rem;">Gaurav Pandey</h2>
+      <p style="color:var(--muted);">Backend systems with clarity and momentum.</p>
     </div>
     <div class="actions" style="gap:10px;">
       <a class="btn" href="mailto:gaurav17p@gmail.com">Email</a>
@@ -457,6 +432,8 @@
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
+    const tiltTargets = document.querySelectorAll('[data-tilt]');
+    const parallax = document.querySelector('[data-parallax]');
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (!prefersReduced && 'IntersectionObserver' in window) {
@@ -467,25 +444,33 @@
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15 });
+      }, { threshold: 0.14 });
       reveals.forEach((el) => io.observe(el));
     } else {
       reveals.forEach((el) => el.classList.add('in'));
     }
 
-    // Lightweight tilt on hover for cards
-    const tiltTargets = document.querySelectorAll('[data-tilt]');
-    tiltTargets.forEach((card) => {
-      card.addEventListener('pointermove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `rotateX(${(-y * 5).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(-4px)`;
+    if (!prefersReduced) {
+      tiltTargets.forEach((card) => {
+        card.addEventListener('pointermove', (e) => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - 0.5;
+          const y = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform = `rotateX(${(-y * 5).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(-4px)`;
+        });
+        card.addEventListener('pointerleave', () => card.style.transform = '');
       });
-      card.addEventListener('pointerleave', () => {
-        card.style.transform = '';
-      });
-    });
+
+      if (parallax) {
+        parallax.addEventListener('pointermove', (e) => {
+          const r = parallax.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - 0.5;
+          const y = (e.clientY - r.top) / r.height - 0.5;
+          parallax.style.transform = `translate3d(${x * 12}px, ${y * 12}px, 0)`;
+        });
+        parallax.addEventListener('pointerleave', () => parallax.style.transform = '');
+      }
+    }
   </script>
 </body>
 </html>
