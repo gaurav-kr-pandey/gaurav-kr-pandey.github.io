@@ -28,6 +28,23 @@
             --max-width: 1180px;
         }
 
+        @keyframes floatY {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 25px 80px rgba(94, 234, 212, 0.12); }
+            50% { box-shadow: 0 25px 120px rgba(103, 232, 249, 0.26); }
+            100% { box-shadow: 0 25px 80px rgba(94, 234, 212, 0.12); }
+        }
+
+        @keyframes rotateHue {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -61,6 +78,19 @@
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 84px 84px;
             mask-image: radial-gradient(circle at center, black 44%, transparent 88%);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.3;
+            background: radial-gradient(circle at 30% 20%, rgba(94, 234, 212, 0.14), transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(251, 113, 133, 0.14), transparent 40%);
+            filter: blur(40px);
+            transform-origin: center;
+            animation: rotateHue 38s linear infinite;
         }
 
         a {
@@ -197,6 +227,7 @@
 
         .hero-copy {
             padding: 34px;
+            animation: floatY 16s ease-in-out infinite;
         }
 
         .eyebrow {
@@ -318,6 +349,7 @@
                 radial-gradient(circle at top right, rgba(251, 113, 133, 0.16), transparent 28%),
                 radial-gradient(circle at bottom left, rgba(94, 234, 212, 0.16), transparent 32%),
                 var(--panel-strong);
+            animation: floatY 18s ease-in-out infinite alternate;
         }
 
         .portrait-shell {
@@ -417,6 +449,7 @@
         .spotlight-card {
             padding: 24px;
             min-height: 220px;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .spotlight-card::before,
@@ -471,6 +504,7 @@
             display: grid;
             grid-template-columns: 190px minmax(0, 1fr);
             gap: 24px;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .timeline-meta {
@@ -526,6 +560,7 @@
 
         .stack-card {
             padding: 24px;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .stack-title {
@@ -557,6 +592,7 @@
                 radial-gradient(circle at right top, rgba(251, 191, 36, 0.14), transparent 26%),
                 radial-gradient(circle at left bottom, rgba(94, 234, 212, 0.14), transparent 24%),
                 var(--panel-strong);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .contact-list {
@@ -605,6 +641,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 20px;
+            transition: transform 0.2s ease;
         }
 
         .footer-panel p {
@@ -631,6 +668,36 @@
             color: var(--text);
             transform: translateY(-2px);
             outline: none;
+        }
+
+        .button {
+            background-size: 200% 200%;
+        }
+
+        .button-primary {
+            background-image: linear-gradient(135deg, var(--teal), var(--gold));
+            animation: glowPulse 9s ease-in-out infinite;
+        }
+
+        .button-secondary {
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+        }
+
+        .button:hover {
+            background-position: 100% 0;
+        }
+
+        .spotlight-card:hover,
+        .timeline-item:hover,
+        .stack-card:hover,
+        .contact-panel:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 25px 60px rgba(5, 12, 22, 0.45);
+        }
+
+        .footer-panel:hover {
+            transform: translateY(-2px);
         }
 
         .reveal {
@@ -773,7 +840,7 @@
                 <aside class="hero-panel reveal">
                     <div class="portrait-shell">
                         <div class="portrait">
-                            <img src="profile_pic.jpeg" alt="Portrait of Gaurav Pandey">
+                            <img src="images/profile_pic.jpg" alt="Portrait of Gaurav Pandey">
                         </div>
                     </div>
 
