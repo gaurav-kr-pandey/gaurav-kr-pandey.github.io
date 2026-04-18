@@ -242,12 +242,6 @@
     transform: scale(1.08);
 }
 
-.company-logo.walmart { background: linear-gradient(135deg, #0071dc, #004c91); }
-.company-logo.commerceiq { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
-.company-logo.paypal { background: linear-gradient(135deg, #003087, #009cde); }
-.company-logo.capillary { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-.company-logo.globallogic { background: linear-gradient(135deg, #27ae60, #2ecc71); }
-.company-logo.cdac { background: linear-gradient(135deg, #2c3e50, #34495e); }
 
 /* ── Glass Panel ── */
 .glass-panel {
