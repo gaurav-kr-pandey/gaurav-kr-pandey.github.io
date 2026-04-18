@@ -53,6 +53,7 @@
   },
   {
     "company": "Capillary Technologies",
+    "logoImage": "assets/images/logos/capillary.png",
     "logoLetter": "CT",
     "logoClass": "capillary",
     "brandColor": "#e74c3c",
@@ -86,7 +87,7 @@
   },
   {
     "company": "C-DAC",
-    "logoImage": "assets/images/logos/cdac.jpeg",
+    "logoImage": "assets/images/logos/cdac.png",
     "logoLetter": "CD",
     "logoClass": "cdac",
     "brandColor": "#2c3e50",
