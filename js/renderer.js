@@ -125,30 +125,33 @@ const Renderer = (() => {
         }
     }
 
-    /* ── Experience Section ── */
+    /* ── Architectural Impact (Systems Gallery) ── */
     function renderExperience(experience) {
         const container = document.getElementById('experienceTimeline');
         if (!container || !experience) return;
 
+        // Mock SVG schematic for technical vibe
+        const getSchematic = (idx) => {
+            if(idx === 0) return `<svg class="system-schematic" viewBox="0 0 200 100"><path d="M10,50 L50,50 M50,20 L50,80 M50,20 L90,20 M50,80 L90,80" stroke="var(--brand-primary)" stroke-width="2" fill="none"/><circle cx="90" cy="20" r="10" fill="var(--surface)" stroke="var(--brand-primary)" stroke-width="2"/><circle cx="90" cy="80" r="10" fill="var(--surface)" stroke="var(--brand-primary)" stroke-width="2"/><rect x="130" y="30" width="40" height="40" fill="none" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="4 4"/></svg>`;
+            if(idx === 1) return `<svg class="system-schematic" viewBox="0 0 200 100"><rect x="10" y="40" width="40" height="20" rx="4" fill="none" stroke="var(--brand-primary)" stroke-width="2"/><path d="M50,50 L90,20 M50,50 L90,80 M90,20 L130,20 M90,80 L130,80" stroke="var(--brand-primary)" stroke-width="1" fill="none"/><path d="M130,20 L170,50 L130,80 Z" fill="none" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="2 2"/></svg>`;
+            return '';
+        };
+
         container.innerHTML = experience.map((exp, i) => `
-            <div class="timeline-item reveal stagger-${Math.min(i + 1, 8)}">
-                <div class="timeline-dot"></div>
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div class="company-info">
-                            ${exp.logoImage
-                                ? `<div class="company-logo ${exp.logoClass}"><img src="${exp.logoImage}" alt="${exp.company}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>`
-                                : `<div class="company-logo ${exp.logoClass}" style="background: linear-gradient(135deg, ${exp.brandColor}, ${adjustColor(exp.brandColor, -30)})">${exp.logoLetter}</div>`
-                            }
-                            <div class="company-details">
-                                <h3>${exp.company}</h3>
-                                <div class="company-role">${exp.role}</div>
-                                ${exp.team ? `<div class="company-team">${exp.team}</div>` : ''}
-                            </div>
-                        </div>
-                        <div class="experience-duration">${exp.duration}</div>
+            <div class="system-card reveal stagger-${Math.min(i + 1, 8)} magnetic-card">
+                ${getSchematic(i)}
+                <div class="system-header">
+                    <div class="company-logo ${exp.logoClass}" style="border: 1px solid var(--border-primary); background: transparent;">
+                        ${exp.logoImage ? `<img src="${exp.logoImage}" alt="${exp.company}" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(1.5);">` : `<span class="font-mono" style="color:var(--text-secondary)">${exp.logoLetter}</span>`}
                     </div>
-                    <ul class="achievement-list">
+                    <div class="system-details">
+                        <h3 class="font-mono" style="color: var(--text-primary); text-transform: uppercase;">${exp.company}</h3>
+                        <div class="system-role">${exp.role} <span class="system-team" style="color: var(--brand-primary)">// ${exp.team || exp.type}</span></div>
+                    </div>
+                    <div class="system-duration font-mono">[ ${exp.duration} ]</div>
+                </div>
+                <div class="system-body">
+                    <ul class="system-achievements">
                         ${exp.achievements.map(a => `<li>${a}</li>`).join('')}
                     </ul>
                 </div>
