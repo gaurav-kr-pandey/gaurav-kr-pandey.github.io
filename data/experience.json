@@ -1,0 +1,104 @@
+[
+  {
+    "company": "Walmart Global Tech India",
+    "logoImage": "assets/images/logos/walmart.png",
+    "logoLetter": "W",
+    "logoClass": "walmart",
+    "brandColor": "#0071dc",
+    "role": "Senior Software Engineer",
+    "team": "IAM Team",
+    "duration": "Dec 2023 – Present",
+    "location": "Bengaluru, India",
+    "type": "Full-time",
+    "achievements": [
+      "Led the WCP initiative — successfully migrated 7.5 million production users to a new database, achieving SSO and resolving legacy authentication issues",
+      "Designed and executed data migration strategies for multiple global markets, ensuring seamless transitions with minimal downtime",
+      "Managed scrum activities including sprint planning, resource optimization, and reporting key metrics to senior management"
+    ]
+  },
+  {
+    "company": "CommerceIQ",
+    "logoImage": "assets/images/logos/commerceiq.png",
+    "logoLetter": "C",
+    "logoClass": "commerceiq",
+    "brandColor": "#6366f1",
+    "role": "SDE-II",
+    "team": "Media Planner",
+    "duration": "Aug 2022 – Nov 2023",
+    "location": "Bengaluru, India",
+    "type": "Full-time",
+    "achievements": [
+      "Led development of microservices architecture from scratch using Java, Spring Boot, and multithreading for the Media Planner product",
+      "Developed a serverless step function pipeline using AWS services (Lambda, SQS, S3) for automated media planning workflows",
+      "Provided technical leadership and mentoring to the team, guiding the end-to-end build of Media Planner from inception",
+      "Resolved critical concurrency issues through batch processing optimizations, saving significant infrastructure costs"
+    ]
+  },
+  {
+    "company": "PayPal",
+    "logoImage": "assets/images/logos/paypal.png",
+    "logoLetter": "P",
+    "logoClass": "paypal",
+    "brandColor": "#003087",
+    "role": "Software Engineer II",
+    "team": "Fraud Protection",
+    "duration": "Oct 2021 – Aug 2022",
+    "location": "Bengaluru, India",
+    "type": "Full-time",
+    "achievements": [
+      "Resolved P0 production bugs in the fraud protection system, enhancing reliability and reducing downtime by 5%",
+      "Built Grafana monitoring dashboards for chargeback tracking, improving observability and operational efficiency by 30%",
+      "Managed chargeback workflows in the Fraud Protection Team, reducing average resolution time by 10%"
+    ]
+  },
+  {
+    "company": "Capillary Technologies",
+    "logoLetter": "CT",
+    "logoClass": "capillary",
+    "brandColor": "#e74c3c",
+    "role": "Software Development Engineer",
+    "team": "Platform Engineering",
+    "duration": "Dec 2020 – Sep 2021",
+    "location": "Bengaluru, India",
+    "type": "Full-time",
+    "achievements": [
+      "Improved microservices performance through comprehensive monitoring and Resilience4j circuit breaker implementation",
+      "Created a shared library for retry patterns on external API calls, reducing cascade failure rates across services",
+      "Contributed to system design reviews and scalability initiatives for the platform"
+    ]
+  },
+  {
+    "company": "GlobalLogic",
+    "logoImage": "assets/images/logos/globallogic.png",
+    "logoLetter": "GL",
+    "logoClass": "globallogic",
+    "brandColor": "#27ae60",
+    "role": "Software Engineer",
+    "team": "",
+    "duration": "Dec 2018 – Dec 2020",
+    "location": "Noida, India",
+    "type": "Full-time",
+    "achievements": [
+      "Boosted application performance by 3× using WebSocket connections and Hazelcast distributed caching",
+      "Designed and implemented REST APIs using Spring Boot with a focus on scalability and maintainability",
+      "Received Integrated Team Award and Spot Award for outstanding contributions to the project"
+    ]
+  },
+  {
+    "company": "C-DAC",
+    "logoImage": "assets/images/logos/cdac.jpeg",
+    "logoLetter": "CD",
+    "logoClass": "cdac",
+    "brandColor": "#2c3e50",
+    "role": "Project Associate",
+    "team": "Health Domain",
+    "duration": "Mar 2018 – Dec 2018",
+    "location": "Noida, India",
+    "type": "Full-time",
+    "achievements": [
+      "Built Spring Boot applications to manage health domain data for AIIMS Hospital, handling large traffic volumes",
+      "Ensured high availability and performance of the monolithic system serving critical healthcare operations",
+      "Actively resolved bugs and implemented feature requests based on end-user feedback from hospital staff"
+    ]
+  }
+]

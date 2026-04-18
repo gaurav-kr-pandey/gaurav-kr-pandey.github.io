@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Hub — Gaurav Pandey | Articles & Videos</title>
+    <meta name="description" content="Technical articles and videos on system design, distributed systems, and engineering by Gaurav Pandey.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* ── Content Page Specific ── */
+        .content-hero {
+            padding: calc(var(--navbar-height) + var(--space-12)) var(--space-8) var(--space-12);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .content-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-mesh);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .content-hero * { position: relative; z-index: 1; }
+        .content-hero h1 {
+            font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+            font-weight: 800;
+            margin-bottom: var(--space-4);
+        }
+        .content-hero p {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--space-8);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--brand-primary);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-6);
+            transition: all var(--duration-normal) var(--ease-out);
+        }
+        .back-link:hover { gap: var(--space-3); }
+        .back-link svg { width: 16px; height: 16px; }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-12);
+        }
+        .tab-btn {
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: var(--surface);
+            border: 1px solid var(--border-primary);
+            cursor: pointer;
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+        .tab-btn:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
+        .tab-btn.active {
+            background: var(--gradient-brand);
+            color: white;
+            border-color: transparent;
+            box-shadow: var(--shadow-brand);
+        }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        /* Content Container */
+        .content-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-8) var(--space-16);
+        }
+
+        /* ── Article Cards ── */
+        .article-list { display: grid; gap: var(--space-5); }
+        .article-row {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: var(--space-6);
+            align-items: center;
+            padding: var(--space-6) var(--space-8);
+            background: var(--surface);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-xl);
+            text-decoration: none;
+            color: inherit;
+            transition: all var(--duration-normal) var(--ease-out);
+        }
+        .article-row:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: var(--shadow-lg);
+            transform: translateX(4px);
+        }
+        .article-number {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+            font-weight: 600;
+            width: 28px;
+            text-align: center;
+        }
+        .article-body h3 {
+            font-size: var(--text-base);
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+            line-height: 1.3;
+        }
+        .article-body p {
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-3);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .article-body .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+        }
+        .article-body .article-tag {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--brand-primary);
+            background: rgba(99, 102, 241, 0.08);
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+        }
+        .article-meta-right {
+            text-align: right;
+            white-space: nowrap;
+        }
+        .article-date {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+        .article-read {
+            font-size: 11px;
+            color: var(--text-tertiary);
+            margin-top: 4px;
+        }
+        .article-row .arrow-icon {
+            color: var(--text-tertiary);
+            transition: all var(--duration-normal) var(--ease-out);
+        }
+        .article-row:hover .arrow-icon { color: var(--brand-primary); transform: translateX(4px); }
+
+        /* ── Video Grid ── */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: var(--space-6);
+        }
+        .video-card {
+            background: var(--surface);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: all var(--duration-normal) var(--ease-out);
+            text-decoration: none;
+            color: inherit;
+        }
+        .video-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-6px);
+        }
+        .video-thumb {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: var(--bg-tertiary);
+            overflow: hidden;
+        }
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--duration-slow) var(--ease-out);
+        }
+        .video-card:hover .video-thumb img { transform: scale(1.05); }
+        .video-play-btn {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity var(--duration-normal) var(--ease-out);
+        }
+        .video-card:hover .video-play-btn { opacity: 1; }
+        .play-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: rgba(255,255,255,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+        }
+        .play-circle svg { width: 24px; height: 24px; color: #e11d48; margin-left: 3px; }
+        .video-info { padding: var(--space-5) var(--space-6); }
+        .video-info h3 {
+            font-size: var(--text-base);
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+            line-height: 1.3;
+        }
+        .video-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+        }
+        .video-meta .dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--text-tertiary);
+        }
+        .video-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-top: var(--space-3);
+        }
+        .video-tag {
+            font-size: 11px;
+            font-weight: 600;
+            color: #e11d48;
+            background: rgba(225, 29, 72, 0.08);
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+        }
+
+        /* CTA Banner */
+        .subscribe-banner {
+            background: var(--gradient-brand);
+            border-radius: var(--radius-xl);
+            padding: var(--space-10) var(--space-8);
+            text-align: center;
+            margin-top: var(--space-12);
+            position: relative;
+            overflow: hidden;
+        }
+        .subscribe-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        .subscribe-banner * { position: relative; z-index: 1; }
+        .subscribe-banner h3 { font-size: var(--text-2xl); color: white; margin-bottom: var(--space-3); }
+        .subscribe-banner p { color: rgba(255,255,255,0.85); margin-bottom: var(--space-6); max-width: 500px; margin-left: auto; margin-right: auto; }
+        .subscribe-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+        .subscribe-actions .btn { background: white; color: var(--brand-primary-dark); font-weight: 700; }
+        .subscribe-actions .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .subscribe-actions .btn-yt { background: #e11d48; color: white; }
+        .subscribe-actions .btn-yt:hover { background: #be123c; }
+
+        /* Nav bar for this page */
+        .content-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: var(--space-4) 0;
+        }
+        .content-nav .navbar-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-8);
+        }
+        .content-nav .navbar-glass {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-3) var(--space-6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .content-nav .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        .content-nav .brand-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            border: 2px solid var(--brand-primary);
+        }
+        .content-nav .brand-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .content-nav .brand-name { font-size: var(--text-sm); font-weight: 700; }
+        .content-nav .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-row { grid-template-columns: 1fr; gap: var(--space-3); padding: var(--space-5); }
+            .article-number { display: none; }
+            .article-meta-right { text-align: left; }
+            .video-grid { grid-template-columns: 1fr; }
+            .tab-nav { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="content-nav">
+        <div class="navbar-inner">
+            <div class="navbar-glass">
+                <a href="index.html" class="navbar-brand">
+                    <div class="brand-avatar"><img src="assets/images/profile_pic.jpeg" alt="Gaurav Pandey"></div>
+                    <span class="brand-name">Gaurav Pandey</span>
+                </a>
+                <div class="nav-actions">
+                    <a href="index.html" class="btn btn-ghost btn-sm">← Portfolio</a>
+                    <button class="theme-toggle" aria-label="Toggle dark mode"><div class="theme-ball"></div></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="content-hero">
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+            Back to Portfolio
+        </a>
+        <h1 class="hero-entrance hero-entrance-delay-1">Content <span class="text-gradient">Hub</span></h1>
+        <p class="hero-entrance hero-entrance-delay-2">Deep-dives into system design, distributed systems, and engineering — through articles and videos.</p>
+        <div class="tab-nav hero-entrance hero-entrance-delay-3">
+            <button class="tab-btn active" data-tab="articles">
+                <svg style="width:16px;height:16px;vertical-align:-3px;margin-right:6px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                Articles (7)
+            </button>
+            <button class="tab-btn" data-tab="videos">
+                <svg style="width:16px;height:16px;vertical-align:-3px;margin-right:6px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Videos (6)
+            </button>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content-container">
+
+        <!-- Articles Tab -->
+        <div class="tab-panel active" id="tab-articles">
+            <div class="article-list" id="articleList"><!-- JS renders --></div>
+            <div class="subscribe-banner reveal" id="nlBanner">
+                <h3>Subscribe to Scale to Billions</h3>
+                <p>Join thousands of engineers. Get weekly deep-dives on system design and distributed systems.</p>
+                <div class="subscribe-actions">
+                    <a href="https://www.linkedin.com/newsletters/scaletobillions-7048724214635266048/" target="_blank" class="btn">Subscribe on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Videos Tab -->
+        <div class="tab-panel" id="tab-videos">
+            <div class="video-grid" id="videoGrid"><!-- JS renders --></div>
+            <div class="subscribe-banner reveal" style="margin-top:var(--space-12)">
+                <h3>Watch on YouTube</h3>
+                <p>Visual deep-dives on database internals, ACID properties, and system design concepts.</p>
+                <div class="subscribe-actions">
+                    <a href="https://www.youtube.com/@scaletobillions" target="_blank" class="btn btn-yt">Subscribe on YouTube</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script>
+        ThemeManager.init();
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Load and render data
+        fetch('data/articles.json')
+            .then(r => r.json())
+            .then(data => {
+                // Render articles
+                const listEl = document.getElementById('articleList');
+                if (listEl && data.articles) {
+                    listEl.innerHTML = data.articles.map((a, i) => `
+                        <a href="${a.url}" target="_blank" rel="noopener" class="article-row reveal stagger-${Math.min(i+1, 8)}">
+                            <div class="article-number">${String(i+1).padStart(2, '0')}</div>
+                            <div class="article-body">
+                                <h3>${a.title}</h3>
+                                <p>${a.description}</p>
+                                <div class="article-tags">
+                                    ${a.tags.map(t => `<span class="article-tag">${t}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="article-meta-right">
+                                <div class="article-date">${a.date}</div>
+                                <div class="article-read">${a.readTime} read</div>
+                            </div>
+                        </a>
+                    `).join('');
+                }
+
+                // Render videos
+                const gridEl = document.getElementById('videoGrid');
+                if (gridEl && data.videos) {
+                    gridEl.innerHTML = data.videos.map((v, i) => `
+                        <a href="${v.url}" target="_blank" rel="noopener" class="video-card reveal stagger-${Math.min(i+1, 8)}">
+                            <div class="video-thumb">
+                                <img src="https://img.youtube.com/vi/${v.videoId}/maxresdefault.jpg"
+                                     onerror="this.src='https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg'"
+                                     alt="${v.title}" loading="lazy">
+                                <div class="video-play-btn">
+                                    <div class="play-circle">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3>${v.title}</h3>
+                                <div class="video-meta">
+                                    <span>${v.views} views</span>
+                                    <span class="dot"></span>
+                                    <span>${v.date}</span>
+                                </div>
+                                <div class="video-tags">
+                                    ${v.tags.map(t => `<span class="video-tag">${t}</span>`).join('')}
+                                </div>
+                            </div>
+                        </a>
+                    `).join('');
+                }
+
+                // Init scroll reveals
+                const obs = new IntersectionObserver((entries) => {
+                    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+                }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+                document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+            });
+    </script>
+</body>
+</html>

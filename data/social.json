@@ -1,0 +1,50 @@
+{
+  "links": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/-gauravpandey",
+      "icon": "linkedin",
+      "label": "Connect on LinkedIn",
+      "username": "-gauravpandey"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/gaurav-kr-pandey",
+      "icon": "github",
+      "label": "Follow on GitHub",
+      "username": "gaurav-kr-pandey"
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@scaletobillions",
+      "icon": "youtube",
+      "label": "Subscribe on YouTube",
+      "username": "@scaletobillions"
+    },
+    {
+      "platform": "Newsletter",
+      "url": "https://www.linkedin.com/newsletters/scaletobillions-7048724214635266048/",
+      "icon": "mail",
+      "label": "Subscribe to Newsletter",
+      "username": "Scale to Billions"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:gaurav17p@gmail.com",
+      "icon": "mail",
+      "label": "Send Email",
+      "username": "gaurav17p@gmail.com"
+    }
+  ],
+  "linkedinBadge": {
+    "vanity": "-gauravpandey",
+    "locale": "en_US",
+    "size": "medium",
+    "type": "VERTICAL"
+  },
+  "youtube": {
+    "channelName": "Scale to Billions",
+    "channelUrl": "https://www.youtube.com/@scaletobillions",
+    "description": "In-depth technical videos on system design, distributed systems, and engineering career guidance. Learn how to build and scale applications to serve millions of users."
+  }
+}

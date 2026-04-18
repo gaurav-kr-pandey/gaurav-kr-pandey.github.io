@@ -1,474 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gaurav Pandey — Backend engineer crafting high-scale platforms with creative product thinking and modern engineering excellence.">
-  <title>Gaurav Pandey • Engineering Experience, Reimagined</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #060710;
-      --panel: rgba(255, 255, 255, 0.07);
-      --text: #f4f8ff;
-      --muted: #95a0bf;
-      --primary: #8a7dff;
-      --secondary: #39d0ff;
-      --accent: #ff5da8;
-      --line: rgba(255, 255, 255, 0.15);
-      --glow: 0 20px 80px rgba(57, 208, 255, 0.2);
-      --max: 1120px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Pandey — Senior Software Engineer</title>
+    <meta name="description" content="Portfolio of Gaurav Pandey, Senior Software Engineer at Walmart with 8+ years building scalable distributed systems.">
+    <meta name="author" content="Gaurav Kumar Pandey">
+    <meta name="keywords" content="Gaurav Pandey, Senior Software Engineer, System Design, Distributed Systems, Java, Spring Boot, AWS, Walmart">
+    <meta property="og:title" content="Gaurav Pandey — Senior Software Engineer">
+    <meta property="og:description" content="Portfolio of Gaurav Pandey, Senior Software Engineer at Walmart with 8+ years building scalable distributed systems.">
+    <meta property="og:image" content="assets/images/profile_pic.jpeg">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://gaurav-kr-pandey.github.io">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    html, body { min-height: 100%; }
-
-    body {
-      font-family: "Manrope", system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at 10% 10%, #1a1740, transparent 35%),
-                  radial-gradient(circle at 90% 20%, #162a46, transparent 35%),
-                  radial-gradient(circle at 45% 80%, #2d1033, transparent 30%),
-                  var(--bg);
-      line-height: 1.5;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .bg-grid {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .22;
-      background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle at center, black 30%, transparent 88%);
-      z-index: 0;
-    }
-
-    .orb {
-      position: fixed;
-      width: 34vw;
-      height: 34vw;
-      border-radius: 50%;
-      filter: blur(30px);
-      opacity: .4;
-      pointer-events: none;
-      z-index: 0;
-      animation: drift 16s ease-in-out infinite;
-    }
-
-    .orb.one { top: -8vw; left: -8vw; background: #5f4bff; }
-    .orb.two { right: -10vw; top: 15vh; background: #02c5ff; animation-delay: -5s; }
-    .orb.three { bottom: -12vw; left: 35vw; background: #ef5fff; animation-delay: -9s; }
-
-    @keyframes drift {
-      0%, 100% { transform: translateY(0) translateX(0) scale(1); }
-      50% { transform: translateY(3vh) translateX(2vw) scale(1.08); }
-    }
-
-    .cursor {
-      position: fixed;
-      width: 18px;
-      height: 18px;
-      border: 2px solid rgba(255,255,255,.7);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 999;
-      transition: width .2s ease, height .2s ease, border-color .2s ease;
-      mix-blend-mode: difference;
-    }
-
-    .cursor.active { width: 34px; height: 34px; border-color: white; }
-
-    .shell { position: relative; z-index: 2; }
-
-    .container {
-      width: min(var(--max), calc(100% - 2.2rem));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(20px);
-      background: rgba(6, 7, 16, 0.65);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: .95rem 0;
-      gap: 1rem;
-    }
-
-    .logo {
-      font-family: "Syne", sans-serif;
-      font-weight: 800;
-      letter-spacing: .03em;
-      font-size: 1.05rem;
-    }
-
-    .logo span {
-      color: var(--secondary);
-      text-shadow: 0 0 16px rgba(57,208,255,.8);
-    }
-
-    .menu { display: flex; gap: .55rem; flex-wrap: wrap; }
-
-    .menu a {
-      text-decoration: none;
-      color: var(--muted);
-      padding: .45rem .85rem;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      font-size: .92rem;
-      transition: .25s ease;
-    }
-
-    .menu a:hover {
-      color: var(--text);
-      border-color: var(--line);
-      background: rgba(255,255,255,.06);
-    }
-
-    main { padding-bottom: 5rem; }
-
-    .hero {
-      padding: 6.5rem 0 4rem;
-      display: grid;
-      gap: 1.6rem;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      gap: .5rem;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      border-radius: 999px;
-      padding: .35rem .85rem;
-      color: #d6dcf2;
-      font-size: .87rem;
-    }
-
-    .hero h1 {
-      font-family: "Syne", sans-serif;
-      font-size: clamp(2.2rem, 5vw, 5rem);
-      letter-spacing: -.03em;
-      line-height: 1.02;
-      max-width: 15ch;
-    }
-
-    .hero h1 .gradient {
-      background: linear-gradient(100deg, #a89fff, #79f0ff, #ff9ad0);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      max-width: 70ch;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.15rem);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .8rem;
-      margin-top: .8rem;
-    }
-
-    .btn {
-      text-decoration: none;
-      padding: .78rem 1.15rem;
-      border-radius: .8rem;
-      font-weight: 700;
-      border: 1px solid var(--line);
-      transition: .2s ease;
-    }
-
-    .btn.primary {
-      color: #031024;
-      border: none;
-      background: linear-gradient(110deg, var(--secondary), var(--primary));
-      box-shadow: var(--glow);
-    }
-
-    .btn.secondary { color: var(--text); }
-
-    .btn:hover { transform: translateY(-3px); }
-
-    .bento {
-      margin-top: 2.2rem;
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 1rem;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 1.1rem;
-      background: var(--panel);
-      backdrop-filter: blur(14px);
-      padding: 1.15rem;
-      position: relative;
-      overflow: hidden;
-      transform-style: preserve-3d;
-      transition: transform .3s ease, border-color .3s ease;
-      min-height: 160px;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: -35% auto auto -20%;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,.2), transparent 60%);
-      opacity: 0;
-      transition: opacity .3s ease;
-    }
-
-    .card:hover { border-color: rgba(255,255,255,.45); }
-    .card:hover::after { opacity: 1; }
-    .card h3 { font-size: .96rem; letter-spacing: .04em; text-transform: uppercase; color: #ccd6ff; }
-    .card p { margin-top: .6rem; color: #cfdaff; }
-
-    .c1 { grid-column: span 7; }
-    .c2 { grid-column: span 5; }
-    .c3, .c4, .c5 { grid-column: span 4; }
-
-    section {
-      margin-top: 5rem;
-    }
-
-    .section-title {
-      font-family: "Syne", sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.6rem);
-      margin-bottom: 1.5rem;
-    }
-
-    .timeline {
-      display: grid;
-      gap: .8rem;
-    }
-
-    .job {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius: 1rem;
-      padding: 1rem 1.1rem;
-      display: grid;
-      gap: .5rem;
-    }
-
-    .job strong { font-size: 1.05rem; }
-    .job small { color: var(--muted); }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: .9rem;
-    }
-
-    .project {
-      border: 1px solid var(--line);
-      border-radius: 1rem;
-      padding: 1rem;
-      background: rgba(7,10,20,.7);
-      transition: transform .2s ease;
-    }
-
-    .project:hover { transform: translateY(-4px); }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem;
-      margin-top: .8rem;
-    }
-
-    .tag {
-      font-size: .75rem;
-      padding: .23rem .55rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: #d8e0ff;
-    }
-
-    footer {
-      margin-top: 5rem;
-      border-top: 1px solid var(--line);
-      padding: 2rem 0 3rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px) scale(.98);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    @media (max-width: 900px) {
-      .c1, .c2, .c3, .c4, .c5 { grid-column: span 12; }
-      .menu { display: none; }
-      .hero { padding-top: 4.8rem; }
-      .cursor { display: none; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
-    }
-  </style>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <div class="bg-grid"></div>
-  <div class="orb one"></div>
-  <div class="orb two"></div>
-  <div class="orb three"></div>
-  <div class="cursor" id="cursor"></div>
 
-  <div class="shell">
-    <header>
-      <div class="container nav">
-        <div class="logo">GAURAV<span>.DEV</span></div>
-        <nav class="menu">
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading</div>
+        </div>
+    </div>
 
-    <main class="container">
-      <section class="hero reveal">
-        <div class="eyebrow">⚡ Building resilient backends with design thinking</div>
-        <h1>Backend Engineer with a <span class="gradient">product mind</span> and obsession for speed.</h1>
-        <p>
-          I craft distributed systems, high-throughput APIs, and cloud-native platforms that stay fast under pressure. This portfolio is intentionally expressive: motion-led, futuristic, and engineered for every screen.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#contact">Let’s Build Something</a>
-          <a class="btn secondary" href="#projects">See Signature Work</a>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         Navigation
+         ═══════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-glass">
+                <a href="#hero" class="navbar-brand">
+                    <div class="brand-avatar">
+                        <img id="brandImg" src="assets/images/profile_pic.jpeg" alt="Gaurav Pandey" loading="eager">
+                    </div>
+                    <div class="brand-text">
+                        <div class="brand-name" id="brandName">Gaurav Pandey</div>
+                        <div class="brand-title" id="brandTitle">Senior Software Engineer</div>
+                    </div>
+                </a>
+
+                <ul class="navbar-nav" id="navLinks">
+                    <!-- Rendered by JS -->
+                </ul>
+
+                <div class="navbar-actions">
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <div class="theme-ball"></div>
+                    </button>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span class="mobile-line"></span>
+                    <span class="mobile-line"></span>
+                    <span class="mobile-line"></span>
+                </button>
+            </div>
         </div>
 
-        <div class="bento">
-          <article class="card c1 tilt reveal">
-            <h3>Impact Snapshot</h3>
-            <p>10+ years across architecture, platform engineering, and AI-powered products with teams spanning startups to global enterprises.</p>
-          </article>
-          <article class="card c2 tilt reveal">
-            <h3>Core Stack</h3>
-            <p>Java, Spring Boot, Python, Node.js, Kafka, Redis, PostgreSQL, AWS, Kubernetes, Terraform, and observability-first operations.</p>
-          </article>
-          <article class="card c3 tilt reveal">
-            <h3>Current Focus</h3>
-            <p>AI agents, data-intensive services, and performance optimization for production-scale systems.</p>
-          </article>
-          <article class="card c4 tilt reveal">
-            <h3>Philosophy</h3>
-            <p>Elegant internals + intuitive UX = software that users remember and teams can evolve.</p>
-          </article>
-          <article class="card c5 tilt reveal">
-            <h3>Location</h3>
-            <p>Open to global remote opportunities and selective consulting engagements.</p>
-          </article>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav" id="mobileNavLinks">
+                <!-- Rendered by JS -->
+            </ul>
+            <div class="mobile-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <div class="theme-ball"></div>
+                </button>
+            </div>
         </div>
-      </section>
+    </nav>
 
-      <section id="experience" class="reveal">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-          <article class="job reveal"><strong>Senior Software Engineer • PayPal</strong><small>Building highly available payment workflows and resilient backend services.</small></article>
-          <article class="job reveal"><strong>Lead Engineer • Walmart</strong><small>Scaled omni-channel commerce integrations and platform reliability initiatives.</small></article>
-          <article class="job reveal"><strong>Engineering Roles • Capillary, CommerceIQ, GlobalLogic</strong><small>Delivered cloud services, API platforms, and analytics systems handling enterprise-level throughput.</small></article>
+    <!-- ═══════════════════════════════════════
+         Hero
+         ═══════════════════════════════════════ -->
+    <section id="hero" class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge hero-entrance hero-entrance-delay-1">
+                    <span class="badge badge-brand" id="heroBadgeText">Senior Engineer at Walmart</span>
+                </div>
+                <h1 class="hero-title hero-entrance hero-entrance-delay-2" id="heroTitle">Gaurav Pandey</h1>
+                <p class="hero-subtitle hero-entrance hero-entrance-delay-3" id="heroSubtitle">Building Scalable Distributed Systems</p>
+                <p class="hero-description hero-entrance hero-entrance-delay-4" id="heroDescription">
+                    I architect and build systems that serve millions of users at scale.
+                </p>
+                <div class="hero-stats hero-entrance hero-entrance-delay-5" id="heroStats">
+                    <!-- Rendered by JS -->
+                </div>
+                <div class="hero-actions hero-entrance hero-entrance-delay-6">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#experience" class="btn btn-secondary">View Experience</a>
+                </div>
+            </div>
+            <div class="hero-visual hero-visual-entrance">
+                <div class="profile-wrapper">
+                    <div class="profile-glow glow-animate"></div>
+                    <div class="profile-frame">
+                        <img id="heroProfileImg" src="assets/images/profile_pic.jpeg" alt="Gaurav Pandey" loading="eager">
+                    </div>
+                    <div class="profile-badges" id="heroBadges">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section id="projects" class="reveal">
-        <h2 class="section-title">Signature Projects</h2>
-        <div class="projects">
-          <article class="project reveal">
-            <h3>Real-Time Insights Platform</h3>
-            <p>Event-driven backend with Kafka streams and reactive APIs for second-level visibility.</p>
-            <div class="tags"><span class="tag">Kafka</span><span class="tag">Spring Boot</span><span class="tag">Redis</span></div>
-          </article>
-          <article class="project reveal">
-            <h3>Checkout Performance Engine</h3>
-            <p>Reduced latency and improved conversion by redesigning service boundaries and caching tiers.</p>
-            <div class="tags"><span class="tag">Java</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span></div>
-          </article>
-          <article class="project reveal">
-            <h3>AI Workflow Orchestrator</h3>
-            <p>Built multi-agent orchestration and monitoring for task automation in enterprise workflows.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">Kubernetes</span></div>
-          </article>
+    <!-- ═══════════════════════════════════════
+         Experience
+         ═══════════════════════════════════════ -->
+    <section id="experience" class="section">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Professional Journey</span>
+                <h2 class="section-title">Experience</h2>
+                <p class="section-description">
+                    8+ years of driving technical excellence across high-impact companies, building systems that serve millions.
+                </p>
+            </div>
+            <div class="timeline" id="experienceTimeline">
+                <!-- Rendered by JS -->
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section id="contact" class="reveal">
-        <h2 class="section-title">Let’s craft something unforgettable.</h2>
-        <p>Email: <a href="mailto:gaurav@example.com" style="color:var(--secondary);">gaurav@example.com</a> • LinkedIn / GitHub links can be plugged here.</p>
-      </section>
-    </main>
+    <!-- ═══════════════════════════════════════
+         Skills
+         ═══════════════════════════════════════ -->
+    <section id="skills" class="section section-alt">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Technical Expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-description">
+                    Deep expertise across the full stack — from distributed system design to cloud infrastructure.
+                </p>
+            </div>
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
 
-    <footer>
-      Designed to feel alive. Built with pure HTML, CSS, and JS for GitHub Pages deployment simplicity.
+    <!-- ═══════════════════════════════════════
+         Writing / Articles
+         ═══════════════════════════════════════ -->
+    <section id="writing" class="section">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Thought Leadership</span>
+                <h2 class="section-title">Writing & Articles</h2>
+                <p class="section-description">
+                    Deep-dives into system design, distributed systems, and engineering best practices.
+                </p>
+            </div>
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="newsletter-banner reveal" id="newsletterBanner">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         Education
+         ═══════════════════════════════════════ -->
+    <section id="education" class="section section-alt">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Academic Background</span>
+                <h2 class="section-title">Education & Certifications</h2>
+                <p class="section-description">
+                    A strong foundation in computer science and continuous learning through professional certifications.
+                </p>
+            </div>
+            <div class="education-grid" id="educationGrid">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="certs-grid" id="certsGrid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         Contact
+         ═══════════════════════════════════════ -->
+    <section id="contact" class="section">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Let's Connect</span>
+                <h2 class="section-title">Contact</h2>
+                <p class="section-description">
+                    Interested in connecting, collaborating, or discussing system design? Reach out.
+                </p>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-channels" id="contactChannels">
+                    <!-- Rendered by JS -->
+                </div>
+                <div class="contact-cta reveal-right">
+                    <h3>Let's Build Together</h3>
+                    <p id="ctaMessage">I'm always interested in connecting with fellow engineers and exploring impactful opportunities.</p>
+                    <a href="mailto:gaurav17p@gmail.com" id="ctaEmail" class="btn btn-primary">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         Footer
+         ═══════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-copy" id="footerCopy">© 2025 Gaurav Pandey. Engineered with precision.</p>
+            <div class="footer-links" id="footerLinks">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+        <div class="footer-inner">
+            <p class="footer-built" id="footerBuilt">Vanilla HTML · CSS · JavaScript</p>
+        </div>
     </footer>
-  </div>
 
-  <script>
-    const cursor = document.getElementById("cursor");
-    window.addEventListener("mousemove", (e) => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-    });
+    <!-- Floating Action Button -->
+    <a href="#hero" class="fab" id="fab">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </a>
 
-    document.querySelectorAll("a, .tilt").forEach((el) => {
-      el.addEventListener("mouseenter", () => cursor.classList.add("active"));
-      el.addEventListener("mouseleave", () => cursor.classList.remove("active"));
-    });
+    <!-- ═══════════════════════════════════════
+         Scripts
+         ═══════════════════════════════════════ -->
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-    document.querySelectorAll(".tilt").forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const rotateX = ((y / rect.height) - 0.5) * -8;
-        const rotateY = ((x / rect.width) - 0.5) * 8;
-        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
-      });
-      card.addEventListener("mouseleave", () => {
-        card.style.transform = "perspective(900px) rotateX(0) rotateY(0) translateY(0)";
-      });
-    });
+    <!-- App Modules -->
+    <script src="js/config.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/renderer.js"></script>
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.15 });
+    <!-- Initialize -->
+    <script>
+        (async function init() {
+            // 1. Theme first (prevents flash)
+            ThemeManager.init();
 
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-  </script>
+            // 2. Load data & render
+            const data = await DataLoader.loadAll();
+            Renderer.renderAll(data);
+
+            // 3. Navigation & animations (after DOM is populated)
+            Navigation.init();
+            Animations.init();
+
+            // 4. Dismiss loader
+            Animations.dismissLoader();
+        })();
+    </script>
 </body>
 </html>

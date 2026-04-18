@@ -1,0 +1,26 @@
+{
+  "seo": {
+    "title": "Gaurav Pandey — Senior Software Engineer | System Design & Distributed Systems",
+    "description": "Portfolio of Gaurav Pandey, Senior Software Engineer at Walmart with 8+ years building scalable distributed systems. Expert in Java, Spring Boot, AWS, and system design.",
+    "keywords": "Gaurav Pandey, Senior Software Engineer, System Design, Distributed Systems, Java, Spring Boot, AWS, Walmart, Portfolio",
+    "author": "Gaurav Kumar Pandey",
+    "ogImage": "assets/images/profile_pic.jpeg",
+    "ogUrl": "https://gaurav-kr-pandey.github.io",
+    "canonical": "https://gaurav-kr-pandey.github.io"
+  },
+  "navigation": [
+    { "label": "Home", "href": "#hero", "id": "nav-home" },
+    { "label": "Experience", "href": "#experience", "id": "nav-experience" },
+    { "label": "Skills", "href": "#skills", "id": "nav-skills" },
+    { "label": "Writing", "href": "#writing", "id": "nav-writing" },
+    { "label": "Content", "href": "content.html", "id": "nav-content" },
+    { "label": "Education", "href": "#education", "id": "nav-education" },
+    { "label": "Contact", "href": "#contact", "id": "nav-contact" }
+  ],
+  "footer": {
+    "copyright": "© 2025 Gaurav Pandey. Engineered with precision.",
+    "builtWith": "Vanilla HTML · CSS · JavaScript"
+  },
+  "version": "6.0.0",
+  "lastUpdated": "2026-04-18"
+}

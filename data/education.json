@@ -1,0 +1,20 @@
+[
+  {
+    "institution": "Centre for Development of Advanced Computing (C-DAC)",
+    "degree": "PG Diploma in Advanced Computing",
+    "field": "Software Development & Advanced Computing",
+    "duration": "Feb 2017 – 2018",
+    "location": "Noida, India",
+    "icon": "graduation-cap",
+    "description": "Specialized training in advanced computing technologies, software development methodologies, and enterprise application architecture."
+  },
+  {
+    "institution": "Gautam Buddh Technical University",
+    "degree": "Bachelor of Technology",
+    "field": "Information Technology",
+    "duration": "2013 – 2017",
+    "location": "Lucknow, India",
+    "icon": "book-open",
+    "description": "Strong foundation in computer science fundamentals, data structures, algorithms, and information technology principles."
+  }
+]

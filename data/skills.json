@@ -1,0 +1,82 @@
+{
+  "categories": [
+    {
+      "title": "Languages & Frameworks",
+      "icon": "code-2",
+      "skills": [
+        "Java 8+",
+        "Spring Boot",
+        "Spring Framework",
+        "Spring Security",
+        "Hibernate / JPA",
+        "REST APIs",
+        "Multithreading"
+      ]
+    },
+    {
+      "title": "Cloud & Infrastructure",
+      "icon": "cloud",
+      "skills": [
+        "AWS",
+        "AWS Lambda",
+        "AWS SQS",
+        "AWS S3",
+        "CloudWatch",
+        "Serverless",
+        "Docker"
+      ]
+    },
+    {
+      "title": "Architecture & Systems",
+      "icon": "cpu",
+      "skills": [
+        "Microservices",
+        "System Design",
+        "Distributed Systems",
+        "Event-Driven Architecture",
+        "API Design",
+        "Data Migration"
+      ]
+    },
+    {
+      "title": "Data & Messaging",
+      "icon": "database",
+      "skills": [
+        "MySQL",
+        "NoSQL",
+        "Kafka",
+        "Hazelcast",
+        "Redis",
+        "Data Pipelines"
+      ]
+    },
+    {
+      "title": "DevOps & Tooling",
+      "icon": "settings",
+      "skills": [
+        "Jenkins",
+        "Git",
+        "Grafana",
+        "Resilience4j",
+        "CI/CD",
+        "Monitoring"
+      ]
+    },
+    {
+      "title": "Leadership & Process",
+      "icon": "users",
+      "skills": [
+        "Technical Leadership",
+        "Scrum / Agile",
+        "Code Reviews",
+        "Mentoring",
+        "Sprint Planning",
+        "Cross-Team Collaboration"
+      ]
+    }
+  ],
+  "chartCenter": {
+    "value": "8+",
+    "label": "Years of Engineering Excellence"
+  }
+}

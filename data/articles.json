@@ -1,0 +1,130 @@
+{
+  "newsletter": {
+    "name": "Scale to Billions",
+    "description": "Weekly deep-dives on system design, distributed systems, and engineering career growth. Join thousands of engineers who read my technical articles.",
+    "url": "https://www.linkedin.com/newsletters/scaletobillions-7048724214635266048/",
+    "subscriberCount": "2,500+",
+    "platform": "LinkedIn"
+  },
+  "articles": [
+    {
+      "title": "Understanding Database Transactions: The Backbone of Reliable Data",
+      "description": "A deep dive into ACID properties, isolation levels, and how modern databases ensure data consistency in distributed environments.",
+      "date": "Jun 2024",
+      "url": "https://www.linkedin.com/pulse/understanding-database-transactions-backbone-reliable-gaurav-pandey-w9qrf",
+      "tags": ["Database", "Transactions", "ACID"],
+      "readTime": "8 min",
+      "featured": true
+    },
+    {
+      "title": "Gossip Protocol: Failure Detection in Distributed Systems",
+      "description": "How distributed systems use gossip-based protocols to detect failures, maintain membership, and achieve eventual consistency at scale.",
+      "date": "Aug 2023",
+      "url": "https://www.linkedin.com/pulse/gossip-protocol-failure-detection-distributed-systems-gaurav-pandey",
+      "tags": ["Distributed Systems", "Protocols", "Reliability"],
+      "readTime": "6 min",
+      "featured": true
+    },
+    {
+      "title": "Bloom Filter — A Probabilistic Data Structure",
+      "description": "Understanding how Bloom filters work, their probabilistic guarantees, and practical applications in databases, caches, and network systems.",
+      "date": "Aug 2023",
+      "url": "https://www.linkedin.com/pulse/bloom-filter-probabilistic-data-structure-gaurav-pandey",
+      "tags": ["Data Structures", "Algorithms", "Performance"],
+      "readTime": "5 min",
+      "featured": true
+    },
+    {
+      "title": "When You Should Choose Serverless Architecture?",
+      "description": "A practical guide to evaluating when serverless is the right fit for your application — trade-offs, use cases, and decision frameworks.",
+      "date": "Jul 2023",
+      "url": "https://www.linkedin.com/pulse/when-you-should-choose-serverless-architecture-gaurav-pandey",
+      "tags": ["Architecture", "Serverless", "AWS"],
+      "readTime": "6 min",
+      "featured": false
+    },
+    {
+      "title": "What is Geospatial Index?",
+      "description": "How geospatial indexes power location-based queries in databases — from R-trees to geohashing and their real-world applications.",
+      "date": "May 2023",
+      "url": "https://www.linkedin.com/pulse/what-geospatial-index-gaurav-pandey",
+      "tags": ["Database", "Indexing", "Geospatial"],
+      "readTime": "5 min",
+      "featured": false
+    },
+    {
+      "title": "How Live Streaming Videos Reach You with Minimum Latency",
+      "description": "The complete pipeline behind live video streaming — from encoding and CDN distribution to adaptive bitrate and latency optimization.",
+      "date": "Mar 2023",
+      "url": "https://www.linkedin.com/pulse/how-live-streaming-videos-reach-you-minimum-latency-possible-pandey",
+      "tags": ["System Design", "Streaming", "CDN"],
+      "readTime": "7 min",
+      "featured": false
+    },
+    {
+      "title": "Maintaining Database Atomicity and Durability with Write-Ahead Logging",
+      "description": "Deep dive into Write-Ahead Logging (WAL) — how databases use sequential log writes to guarantee crash recovery and transaction durability.",
+      "date": "Feb 2023",
+      "url": "https://www.linkedin.com/pulse/maintaining-database-atomicity-durability-write-ahead-gaurav-pandey",
+      "tags": ["Database", "WAL", "Recovery"],
+      "readTime": "6 min",
+      "featured": false
+    }
+  ],
+  "youtube": {
+    "channelName": "Scale to Billions",
+    "channelUrl": "https://www.youtube.com/@scaletobillions",
+    "description": "In-depth technical videos on system design, distributed systems, and engineering career guidance.",
+    "subscriberCount": "Growing"
+  },
+  "videos": [
+    {
+      "title": "Write-Ahead Logging: Database Recovery Demystified",
+      "views": "947",
+      "date": "2025",
+      "videoId": "32--A76gHy0",
+      "url": "https://www.youtube.com/watch?v=32--A76gHy0",
+      "tags": ["Database", "WAL", "Recovery"]
+    },
+    {
+      "title": "Database Transactions Explained",
+      "views": "226",
+      "date": "2025",
+      "videoId": "xpgw09-J77s",
+      "url": "https://www.youtube.com/watch?v=xpgw09-J77s",
+      "tags": ["Database", "Transactions", "ACID"]
+    },
+    {
+      "title": "Database Consistency Explained | ACID Properties Simplified",
+      "views": "180",
+      "date": "2025",
+      "videoId": "cQaopV6d28c",
+      "url": "https://www.youtube.com/watch?v=cQaopV6d28c",
+      "tags": ["Database", "Consistency", "ACID"]
+    },
+    {
+      "title": "Durability in Database Transactions Explained",
+      "views": "133",
+      "date": "2025",
+      "videoId": "cdnm83-eZWc",
+      "url": "https://www.youtube.com/watch?v=cdnm83-eZWc",
+      "tags": ["Database", "Durability", "ACID"]
+    },
+    {
+      "title": "Database Isolation Levels Explained: Essential Guide for Reliable Transactions",
+      "views": "116",
+      "date": "2025",
+      "videoId": "oaKCFHo-1Sw",
+      "url": "https://www.youtube.com/watch?v=oaKCFHo-1Sw",
+      "tags": ["Database", "Isolation", "Transactions"]
+    },
+    {
+      "title": "Atomicity in Database Transaction | ACID Properties Simplified",
+      "views": "53",
+      "date": "2025",
+      "videoId": "wq3gB9ScEt0",
+      "url": "https://www.youtube.com/watch?v=wq3gB9ScEt0",
+      "tags": ["Database", "Atomicity", "ACID"]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Gaurav Pandey",
+  "fullName": "Gaurav Kumar Pandey",
+  "title": "Senior Software Engineer",
+  "company": "Walmart Global Tech India",
+  "team": "Identity & Access Management",
+  "location": "Bengaluru, India",
+  "email": "gaurav17p@gmail.com",
+  "profileImage": "assets/images/profile_pic.jpeg",
+  "bio": "Passionate software engineer with 8+ years of experience building scalable distributed systems, leading technical initiatives, and mentoring engineers. Currently driving critical identity and access management projects at Walmart Global Tech while sharing knowledge through my newsletter and YouTube channel.",
+  "tagline": "Building Scalable Distributed Systems · System Design Advocate",
+  "heroBadge": "Senior Engineer at Walmart",
+  "heroDescription": "I architect and build systems that serve millions of users at scale. With deep expertise in Java, Spring Boot, and distributed systems, I focus on solving complex engineering challenges — from migrating 7.5M users with zero downtime to designing serverless pipelines on AWS. I write about system design and scalability on my newsletter, Scale to Billions.",
+  "stats": [
+    { "value": "8+", "label": "Years Experience", "suffix": "" },
+    { "value": "7.5", "label": "Million Users Migrated", "suffix": "M" },
+    { "value": "6", "label": "Companies", "suffix": "" }
+  ],
+  "profileBadges": ["Java & Spring Boot", "System Design", "Tech Leadership"],
+  "availabilityMessage": "I'm always interested in connecting with fellow engineers, discussing system design, and exploring impactful opportunities in senior engineering and technical leadership roles.",
+  "resumeUrl": "#"
+}
