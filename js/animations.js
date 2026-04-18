@@ -43,7 +43,7 @@ const Animations = (() => {
             });
         }, { threshold: 0.3 });
 
-        const statsContainer = document.querySelector('.hero-stats');
+        const statsContainer = document.querySelector('.stats-tile, .hero-stats');
         if (statsContainer) {
             counterObserver.observe(statsContainer);
         }
