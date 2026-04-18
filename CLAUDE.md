@@ -15,9 +15,10 @@ The repository implements Gaurav Pandey's personal portfolio website using a mod
 
 **Project Structure:**
 ```
-├── index.html              # Current version (v6)
-├── index_v1–v5.html        # Preserved previous versions
-├── profile_pic.jpeg         # Profile picture (root — legacy compat)
+├── index.html              # Current version (v6 main page)
+├── content.html            # Content Hub (Articles & Videos)
+├── versions/               # Preserved previous versions (v1-v5)
+├── profile_pic.jpeg        # Profile picture (legacy compat)
 ├── css/
 │   ├── variables.css       # Design tokens & CSS custom properties
 │   ├── base.css            # Reset, typography, globals
