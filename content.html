@@ -407,11 +407,33 @@
         </div>
     </main>
 
+    <!-- ═══════════════════════════════════════
+         Terminal Footer
+         ═══════════════════════════════════════ -->
+    <footer id="terminalFooter" class="terminal-footer font-mono">
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <span class="ctrl close"></span>
+                <span class="ctrl min"></span>
+                <span class="ctrl max"></span>
+            </div>
+            <div class="terminal-title">gaurav@sysadmin ~ /content</div>
+            <div class="terminal-time">SYS_TIME: <span id="terminalTime">00:00:00</span> IST</div>
+        </div>
+        <div class="terminal-body" id="terminalLogs">
+            <!-- Rendered by terminal-footer.js -->
+        </div>
+        <div class="terminal-input">
+            <span class="prompt">$</span> <span class="cursor-blink">_</span>
+        </div>
+    </footer>
+
     <!-- Scripts -->
     <script src="js/animations.js"></script>
     <script src="js/canvas-bg.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/terminal-footer.js"></script>
     <script>
         ThemeManager.init();
 

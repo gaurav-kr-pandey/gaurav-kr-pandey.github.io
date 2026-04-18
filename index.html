@@ -95,75 +95,46 @@
     </nav>
 
     <!-- ═══════════════════════════════════════
-         Bento Grid Hero
+         Brutalist Hero
          ═══════════════════════════════════════ -->
-    <section id="hero" class="hero bento-hero">
-        <div class="bento-container">
-            <!-- Intro Tile (Main) -->
-            <div class="bento-tile intro-tile reveal">
-                <div class="hero-badge">
-                    <span class="badge badge-brand" id="heroBadgeText">Senior Engineer at Walmart</span>
-                </div>
-                <h1 class="hero-title" id="heroTitle">Gaurav Pandey</h1>
-                <p class="hero-subtitle" id="heroSubtitle">Building Scalable Distributed Systems</p>
-                <p class="hero-description" id="heroDescription">
-                    I architect and build systems that serve millions of users at scale.
-                </p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary magnetic">Get In Touch</a>
-                    <a href="content.html" class="btn btn-secondary magnetic">View Content Hub</a>
-                </div>
-            </div>
-
-            <!-- Profile Tile -->
-            <div class="bento-tile profile-tile reveal stagger-2">
-                <div class="profile-glow glow-animate"></div>
-                <img id="heroProfileImg" src="assets/images/profile_pic.jpeg" alt="Gaurav Pandey" loading="eager">
-            </div>
-
-            <!-- Location Tile -->
-            <div class="bento-tile location-tile glass-panel reveal stagger-3">
-                <div class="location-content">
-                    <i data-lucide="map-pin"></i>
-                    <div>
-                        <div class="location-text">Bengaluru, India</div>
-                        <div class="location-time" id="localTime">00:00 AM</div>
+    <section id="hero" class="hero brutalist-hero">
+        <div class="grid-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title reveal">Architecting<br>for the next<br><span class="highlight font-mono">1,000,000,000</span><br>requests.</h1>
+                
+                <div class="hero-meta reveal stagger-2">
+                    <div class="hero-avatar">
+                        <img id="heroProfileImg" src="assets/images/profile_pic.jpeg" alt="Gaurav Pandey" class="bw-filter">
+                    </div>
+                    <div class="hero-details">
+                        <h2 class="hero-name" id="heroTitle">Gaurav Pandey</h2>
+                        <p class="hero-role font-mono" id="heroBadgeText">Senior Engineer at Walmart</p>
+                        <p class="hero-sub" id="heroSubtitle">Building Scalable Distributed Systems</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Stats Tile -->
-            <div class="bento-tile stats-tile glass-panel reveal stagger-4" id="heroStats">
-                <!-- Rendered by JS -->
+                <div class="hero-actions reveal stagger-3">
+                    <a href="#experience" class="btn btn-primary font-mono magnetic">View Architectural Impact</a>
+                    <a href="content.html" class="btn btn-secondary font-mono magnetic">Terminal / Content</a>
+                </div>
             </div>
-
-            <!-- YouTube Tile -->
-            <a href="content.html" class="bento-tile youtube-tile glass-panel reveal stagger-5 magnetic-card">
-                <div class="yt-header">
-                    <i data-lucide="youtube" class="yt-icon"></i>
-                    <span class="yt-label">Scale to Billions</span>
-                </div>
-                <div class="yt-content">
-                    <p>Watch my latest system design deep dives</p>
-                    <i data-lucide="arrow-up-right" class="yt-arrow"></i>
-                </div>
-            </a>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════
-         Experience
+         Architectural Impact
          ═══════════════════════════════════════ -->
     <section id="experience" class="section">
-        <div class="section-container">
+        <div class="container section-container">
             <div class="section-header reveal">
-                <span class="section-label">Professional Journey</span>
-                <h2 class="section-title">Experience</h2>
+                <span class="section-label font-mono">Proof of Scale</span>
+                <h2 class="section-title">Architectural Impact</h2>
                 <p class="section-description">
-                    8+ years of driving technical excellence across high-impact companies, building systems that serve millions.
+                    Designing systems that withstand billions of requests. A gallery of engineering impact.
                 </p>
             </div>
-            <div class="timeline" id="experienceTimeline">
+            <div class="systems-gallery" id="experienceTimeline">
                 <!-- Rendered by JS -->
             </div>
         </div>
@@ -255,17 +226,23 @@
     </section>
 
     <!-- ═══════════════════════════════════════
-         Footer
+         Terminal Footer
          ═══════════════════════════════════════ -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <p class="footer-copy" id="footerCopy">© 2025 Gaurav Pandey. Engineered with precision.</p>
-            <div class="footer-links" id="footerLinks">
-                <!-- Rendered by JS -->
+    <footer id="terminalFooter" class="terminal-footer font-mono">
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <span class="ctrl close"></span>
+                <span class="ctrl min"></span>
+                <span class="ctrl max"></span>
             </div>
+            <div class="terminal-title">gaurav@sysadmin ~ /portfolio</div>
+            <div class="terminal-time">SYS_TIME: <span id="terminalTime">00:00:00</span> IST</div>
         </div>
-        <div class="footer-inner">
-            <p class="footer-built" id="footerBuilt">Vanilla HTML · CSS · JavaScript</p>
+        <div class="terminal-body" id="terminalLogs">
+            <!-- Rendered by terminal-footer.js -->
+        </div>
+        <div class="terminal-input">
+            <span class="prompt">$</span> <span class="cursor-blink">_</span>
         </div>
     </footer>
 
@@ -287,6 +264,7 @@
     <script src="js/canvas-bg.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/renderer.js"></script>
+    <script src="js/terminal-footer.js"></script>
 
     <!-- Initialize -->
     <script>
