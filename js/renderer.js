@@ -97,11 +97,23 @@ const Renderer = (() => {
         const statsContainer = document.getElementById('heroStats');
         if (statsContainer && personal.stats) {
             statsContainer.innerHTML = personal.stats.map(stat => `
-                <div class="stat-item">
+                <div class="bento-stat">
                     <div class="stat-value font-mono" data-count="${stat.value}" data-suffix="${stat.suffix || ''}">0</div>
                     <div class="stat-label">${stat.label}</div>
                 </div>
             `).join('');
+        }
+
+        // Location Time (Bengaluru - IST)
+        const timeEl = document.getElementById('localTime');
+        if (timeEl) {
+            const updateTime = () => {
+                const now = new Date();
+                const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: true };
+                timeEl.innerText = now.toLocaleTimeString('en-US', options) + ' IST';
+            };
+            updateTime();
+            setInterval(updateTime, 60000);
         }
 
         // Badges

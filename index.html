@@ -18,6 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <!-- View Transitions API -->
+    <meta name="view-transition" content="same-origin">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
@@ -26,7 +29,10 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body>
+<body class="theme-transition">
+    <!-- WebGL Background -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="noise-overlay"></div>
 
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
@@ -89,38 +95,59 @@
     </nav>
 
     <!-- ═══════════════════════════════════════
-         Hero
+         Bento Grid Hero
          ═══════════════════════════════════════ -->
-    <section id="hero" class="hero">
-        <div class="hero-grid">
-            <div class="hero-content">
-                <div class="hero-badge hero-entrance hero-entrance-delay-1">
+    <section id="hero" class="hero bento-hero">
+        <div class="bento-container">
+            <!-- Intro Tile (Main) -->
+            <div class="bento-tile intro-tile reveal">
+                <div class="hero-badge">
                     <span class="badge badge-brand" id="heroBadgeText">Senior Engineer at Walmart</span>
                 </div>
-                <h1 class="hero-title hero-entrance hero-entrance-delay-2" id="heroTitle">Gaurav Pandey</h1>
-                <p class="hero-subtitle hero-entrance hero-entrance-delay-3" id="heroSubtitle">Building Scalable Distributed Systems</p>
-                <p class="hero-description hero-entrance hero-entrance-delay-4" id="heroDescription">
+                <h1 class="hero-title" id="heroTitle">Gaurav Pandey</h1>
+                <p class="hero-subtitle" id="heroSubtitle">Building Scalable Distributed Systems</p>
+                <p class="hero-description" id="heroDescription">
                     I architect and build systems that serve millions of users at scale.
                 </p>
-                <div class="hero-stats hero-entrance hero-entrance-delay-5" id="heroStats">
-                    <!-- Rendered by JS -->
-                </div>
-                <div class="hero-actions hero-entrance hero-entrance-delay-6">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View Experience</a>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary magnetic">Get In Touch</a>
+                    <a href="content.html" class="btn btn-secondary magnetic">View Content Hub</a>
                 </div>
             </div>
-            <div class="hero-visual hero-visual-entrance">
-                <div class="profile-wrapper">
-                    <div class="profile-glow glow-animate"></div>
-                    <div class="profile-frame">
-                        <img id="heroProfileImg" src="assets/images/profile_pic.jpeg" alt="Gaurav Pandey" loading="eager">
-                    </div>
-                    <div class="profile-badges" id="heroBadges">
-                        <!-- Rendered by JS -->
+
+            <!-- Profile Tile -->
+            <div class="bento-tile profile-tile reveal stagger-2">
+                <div class="profile-glow glow-animate"></div>
+                <img id="heroProfileImg" src="assets/images/profile_pic.jpeg" alt="Gaurav Pandey" loading="eager">
+            </div>
+
+            <!-- Location Tile -->
+            <div class="bento-tile location-tile glass-panel reveal stagger-3">
+                <div class="location-content">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <div class="location-text">Bengaluru, India</div>
+                        <div class="location-time" id="localTime">00:00 AM</div>
                     </div>
                 </div>
             </div>
+
+            <!-- Stats Tile -->
+            <div class="bento-tile stats-tile glass-panel reveal stagger-4" id="heroStats">
+                <!-- Rendered by JS -->
+            </div>
+
+            <!-- YouTube Tile -->
+            <a href="content.html" class="bento-tile youtube-tile glass-panel reveal stagger-5 magnetic-card">
+                <div class="yt-header">
+                    <i data-lucide="youtube" class="yt-icon"></i>
+                    <span class="yt-label">Scale to Billions</span>
+                </div>
+                <div class="yt-content">
+                    <p>Watch my latest system design deep dives</p>
+                    <i data-lucide="arrow-up-right" class="yt-arrow"></i>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -256,8 +283,9 @@
     <!-- App Modules -->
     <script src="js/config.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/navigation.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/canvas-bg.js"></script>
+    <script src="js/navigation.js"></script>
     <script src="js/renderer.js"></script>
 
     <!-- Initialize -->
