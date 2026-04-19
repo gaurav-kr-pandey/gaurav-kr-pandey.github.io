@@ -8,7 +8,6 @@ const Animations = (() => {
     function init() {
         setupScrollReveal();
         setupCounters();
-        setupCursor();
         setupTilt();
     }
 
@@ -83,51 +82,6 @@ const Animations = (() => {
         requestAnimationFrame(update);
     }
 
-    /* ── Magnetic Cursor ── */
-    function setupCursor() {
-        if (window.matchMedia('(pointer: coarse)').matches) return; // Skip on mobile
-
-        const cursor = document.createElement('div');
-        cursor.className = 'custom-cursor';
-        document.body.appendChild(cursor);
-
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        // Smooth follow
-        function animateCursor() {
-            const dx = mouseX - cursorX;
-            const dy = mouseY - cursorY;
-            cursorX += dx * 0.2;
-            cursorY += dy * 0.2;
-            cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
-            requestAnimationFrame(animateCursor);
-        }
-        requestAnimationFrame(animateCursor);
-
-        // Magnetic effect on elements
-        document.querySelectorAll('.magnetic, a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('cursor-hover');
-                el.style.transform = '';
-            });
-            
-            if (el.classList.contains('magnetic')) {
-                el.addEventListener('mousemove', (e) => {
-                    const rect = el.getBoundingClientRect();
-                    const x = (e.clientX - rect.left) - rect.width / 2;
-                    const y = (e.clientY - rect.top) - rect.height / 2;
-                    el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-                });
-            }
-        });
-    }
 
     /* ── 3D Card Tilt ── */
     function setupTilt() {
