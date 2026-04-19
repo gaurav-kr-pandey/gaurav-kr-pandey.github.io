@@ -78,8 +78,8 @@
         }
         .tab-btn:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
         .tab-btn.active {
-            background: var(--gradient-brand);
-            color: white;
+            background: var(--brand-primary);
+            color: #000000;
             border-color: transparent;
             box-shadow: var(--shadow-brand);
         }
@@ -109,7 +109,7 @@
             transition: all var(--duration-normal) var(--ease-out);
         }
         .article-row:hover {
-            border-color: rgba(99, 102, 241, 0.3);
+            border-color: rgba(204, 255, 0, 0.5); /* updated to cyber lime */
             box-shadow: var(--shadow-lg);
             transform: translateX(4px);
         }
@@ -144,10 +144,10 @@
         .article-body .article-tag {
             font-size: 11px;
             font-weight: 600;
-            color: var(--brand-primary);
-            background: rgba(99, 102, 241, 0.08);
+            color: var(--bg-primary); /* Dark text on lime badge */
+            background: var(--brand-primary);
             padding: 3px 10px;
-            border-radius: var(--radius-full);
+            border-radius: var(--radius-sm); /* Brutalist edges */
         }
         .article-meta-right {
             text-align: right;
@@ -185,7 +185,7 @@
             color: inherit;
         }
         .video-card:hover {
-            border-color: rgba(99, 102, 241, 0.3);
+            border-color: rgba(204, 255, 0, 0.5); /* updated to cyber lime */
             box-shadow: var(--shadow-xl);
             transform: translateY(-6px);
         }
@@ -201,8 +201,9 @@
             height: 100%;
             object-fit: cover;
             transition: transform var(--duration-slow) var(--ease-out);
+            filter: grayscale(1); /* Brutalist video thumbs */
         }
-        .video-card:hover .video-thumb img { transform: scale(1.05); }
+        .video-card:hover .video-thumb img { transform: scale(1.05); filter: grayscale(0); }
         .video-play-btn {
             position: absolute;
             inset: 0;
@@ -218,13 +219,13 @@
             width: 60px;
             height: 60px;
             border-radius: var(--radius-full);
-            background: rgba(255,255,255,0.95);
+            background: var(--brand-primary); /* Cyber Lime play btn */
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: var(--shadow-lg);
         }
-        .play-circle svg { width: 24px; height: 24px; color: #e11d48; margin-left: 3px; }
+        .play-circle svg { width: 24px; height: 24px; color: #000000; margin-left: 3px; }
         .video-info { padding: var(--space-5) var(--space-6); }
         .video-info h3 {
             font-size: var(--text-base);
@@ -254,34 +255,35 @@
         .video-tag {
             font-size: 11px;
             font-weight: 600;
-            color: #e11d48;
-            background: rgba(225, 29, 72, 0.08);
+            color: #000000; /* Dark text */
+            background: var(--brand-primary);
             padding: 3px 10px;
-            border-radius: var(--radius-full);
+            border-radius: var(--radius-sm);
         }
 
         /* CTA Banner */
         .subscribe-banner {
-            background: var(--gradient-brand);
-            border-radius: var(--radius-xl);
+            background: var(--brand-primary);
+            border-radius: var(--radius-sm); /* Brutalist edges */
             padding: var(--space-10) var(--space-8);
             text-align: center;
             margin-top: var(--space-12);
             position: relative;
             overflow: hidden;
+            border: 1px solid var(--border-primary);
         }
         .subscribe-banner::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 50%, rgba(0,0,0,0.1) 0%, transparent 50%);
         }
         .subscribe-banner * { position: relative; z-index: 1; }
-        .subscribe-banner h3 { font-size: var(--text-2xl); color: white; margin-bottom: var(--space-3); }
-        .subscribe-banner p { color: rgba(255,255,255,0.85); margin-bottom: var(--space-6); max-width: 500px; margin-left: auto; margin-right: auto; }
+        .subscribe-banner h3 { font-size: var(--text-2xl); color: #000000; margin-bottom: var(--space-3); }
+        .subscribe-banner p { color: rgba(0,0,0,0.85); margin-bottom: var(--space-6); max-width: 500px; margin-left: auto; margin-right: auto; }
         .subscribe-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
-        .subscribe-actions .btn { background: white; color: var(--brand-primary-dark); font-weight: 700; }
-        .subscribe-actions .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .subscribe-actions .btn { background: #000000; color: var(--brand-primary); font-weight: 700; border: none; }
+        .subscribe-actions .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
         .subscribe-actions .btn-yt { background: #e11d48; color: white; }
         .subscribe-actions .btn-yt:hover { background: #be123c; }
 

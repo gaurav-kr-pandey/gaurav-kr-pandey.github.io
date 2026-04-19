@@ -36,8 +36,9 @@
 }
 
 .btn-primary {
-    background: var(--gradient-brand);
-    color: white;
+    background: var(--brand-primary);
+    color: #000000;
+    font-weight: var(--weight-bold);
     box-shadow: var(--shadow-brand);
 }
 
@@ -54,7 +55,7 @@
 
 .btn-secondary:hover {
     background: var(--brand-primary);
-    color: white;
+    color: #000000;
     transform: translateY(-2px);
     box-shadow: var(--shadow-brand);
 }
@@ -323,7 +324,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #000000;
     text-decoration: none;
     box-shadow: var(--shadow-brand-lg);
     transition: all var(--duration-normal) var(--ease-spring);
