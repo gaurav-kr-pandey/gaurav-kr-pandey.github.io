@@ -210,7 +210,7 @@ const Renderer = (() => {
                 <p>${nl.description}</p>
                 <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap">
                     <a href="content.html" class="btn">View All ${totalArticles} Articles & ${totalVideos} Videos</a>
-                    <a href="${nl.url}" target="_blank" rel="noopener" class="btn" style="background:transparent;border:1.5px solid white;color:white">Subscribe ${icon('external-link')}</a>
+                    <a href="${nl.url}" target="_blank" rel="noopener" class="btn" style="background:transparent;border:1.5px solid #000000;color:#000000">Subscribe ${icon('external-link')}</a>
                 </div>
             `;
         }
